@@ -1,8 +1,11 @@
 <template>
   <div id="app">
     <Header :nav="headNav"/>
+    
     <Main/>
-    <Footer/>
+
+    <Footer :address="companyAddress"
+    :explore="exploreNav" :informations="infoNav"/>
   </div>
 </template>
 

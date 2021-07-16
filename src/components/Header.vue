@@ -70,20 +70,18 @@ header{
     }
 
     ul{
-      margin:0;
-      list-style:none;
+      @include ul-reset;
 
       li{
         margin:0 18px;
 
         a{
           color:$brand;
-          text-decoration: none;
+          @include a-reset;
 
           &:hover, &:visited,
           &:focus, &:active{
             color:$brand;
-            text-decoration: none;
           }
 
           .dropdown-ico::before{
