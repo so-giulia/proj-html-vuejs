@@ -2,10 +2,11 @@
   <div id="app">
     <Header :nav="headNav"/>
 
-    <Main/>
+    <Main :subhead="subheadings" :head="headings"/>
 
     <Footer :address="companyAddress"
-    :explore="exploreNav" :informations="infoNav"/>
+    :explore="exploreNav" :informations="infoNav"
+    :icons="social"/>
   </div>
 </template>
 
@@ -99,7 +100,13 @@ export default {
         phone: '+1 (305) 547-9909',
         openings: '(9am - 5pm EST, Monday - Friday)',
         mail: 'support@maxcoach.com'
-      }
+      },
+      social:[
+          {class: 'fa-facebook-square'},
+          {class: 'fa-twitter'},
+          {class: 'fa-instagram'},
+          {class: 'fa-linkedin'}
+      ]
     }
   }
 }

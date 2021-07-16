@@ -1,22 +1,27 @@
 <template>
   <main>
     <!-- ———————— JUMBO START ———————— -->
-    <section id="jumbotron">
+    <div id="jumbotron">
       <Jumbo/>
-    </section>
+    </div>
     <!-- ———————— JUMBO END ———————— -->
 
     <!-- ———————— FEATURES START ———————— -->
     <section id="features">
       <div class="container">
         <!-- title -->
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-12">
-            <h3 class="subheading"></h3>
+            <h3 class="subheading text-center">
+              {{subhead[1].h3}}
+            </h3>
           </div>
 
           <div class="col-12">
-            <h2 class="heading"></h2>
+            <h2 class="heading text-center">
+              {{head[0].txt}}
+              <span class="accent">{{head[0].accent}}</span>
+            </h2>
           </div>
         </div>
 
@@ -32,7 +37,32 @@
     <section id="details">
       <!-- Details: 50% 50% layout -->
       <div class="container">
-        <div class="row"></div>
+        <div class="row">
+          <!-- image col -->
+          <div class="col-6"></div>
+
+          <!-- txt col -->
+          <div class="col-6">
+            <!-- title -->
+            <div class="row">
+              <div class="col-12">
+                <h3 class="subheading">
+                  {{subhead[2].h3}} <span class="fw-500">{{subhead[0].brandname}}</span>
+                </h3>
+              </div>
+
+              <div class="col-12">
+                <h2 class="heading">
+                  {{head[1].txt}}
+                  <span class="accent">{{head[1].accent}}</span>
+                  {{head[1].txt2}}
+                </h2>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
       </div>
 
       <!-- Numbers -->
@@ -48,13 +78,18 @@
     <section id="courses">
       <div class="container">
         <!-- title -->
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-12">
-            <h3 class="subheading"></h3>
+            <h3 class="subheading text-center">
+              {{subhead[3].h3}}
+            </h3>
           </div>
           
           <div class="col-12">
-            <h2 class="heading"></h2>
+            <h2 class="heading text-center">
+              {{head[2].txt}}
+              <span class="accent">{{head[2].accent}}</span>
+            </h2>
           </div>
         </div>
 
@@ -69,11 +104,59 @@
     <!-- ———————— LEARN START ———————— -->
     <section id="learn">
       <div class="container">
+         
         <!-- Learn: 50% 50% 1 -->
-        <div class="row"></div>
+        <div class="row">
+          <!-- txt col -->
+          <div class="col-6">
+            <!-- title -->
+            <div class="row">
+              <div class="col-12">
+                <h3 class="subheading">
+                  {{subhead[4].h3}}
+                </h3>
+              </div>
+
+              <div class="col-12">
+                <h2 class="heading">
+                  {{head[3].txt}}
+                  <span class="accent">{{head[3].accent}}</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- image col -->
+          <div class="col-6">
+          </div>
+        </div>
 
         <!-- Learn: 50% 50% 2 -->
-         <div class="row"></div>
+        <div class="row">
+          <!-- image col -->
+          <div class="col-6">
+          </div>
+
+          <!-- txt col -->
+          <div class="col-6">
+            <!-- title -->
+            <div class="row">
+              <div class="col-12">
+                <h3 class="subheading">
+                  {{subhead[5].h3}}
+                </h3>
+              </div>
+
+              <div class="col-12">
+                <h2 class="heading">
+                  {{head[4].txt}}
+                  <span class="accent">{{head[4].accent}}</span>
+                  {{head[4].txt2}}
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- ———————— LEARN END ———————— -->
@@ -82,13 +165,18 @@
     <section id="events">
       <div class="container">
         <!-- title -->
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-12">
-            <h3 class="subheading"></h3>
+            <h3 class="subheading text-center">
+              {{subhead[6].h3}}
+            </h3>
           </div>
           
           <div class="col-12">
-            <h2 class="heading"></h2>
+            <h2 class="heading text-center">
+              {{head[5].txt}}
+              <span class="accent">{{head[5].accent}}</span>
+            </h2>
           </div>
         </div>
 
@@ -104,13 +192,18 @@
     <section id="reviews">
       <div class="container">
         <!-- title -->
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-12">
-           <h3 class="subheading"></h3>
+           <h3 class="subheading color-brand text-center">
+             {{subhead[7].h3}} {{subhead[0].brandname}}
+           </h3>
           </div>
           
           <div class="col-12">
-            <h2 class="heading"></h2>
+            <h2 class="heading text-center">
+              {{head[6].txt}}
+              <span class="accent">{{head[6].accent}}</span>
+            </h2>
           </div>
         </div>
 
@@ -142,6 +235,10 @@ export default {
       FeatCard,
       CourseCard,
       EventCard
+    },
+    props:{
+      subhead: Array,
+      head: Array
     }
 }
 </script>
@@ -155,5 +252,41 @@ export default {
   height:800px;
   background-color: lighten($grey_dark, 3%);
 }
+
+section{
+  // debug
+  border-bottom:1px solid black;
+  margin-bottom:80px;
+
+  // ———— TEXT ———— // 
+  .subheading{
+      font-size:.95rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 400;
+      margin-bottom:20px;
+      color:$grey_darker;
+
+      .fw-500{
+        font-weight:500;
+      }
+  }
+
+  .color-brand{
+    color:$brand;
+  }
+
+  .heading{
+      font-size: 3rem;
+      font-weight: 500;
+      color: $brand;
+
+      .accent{
+          color: $accent;
+          font-weight: 300;
+      }
+  }
+}
+
 
 </style>

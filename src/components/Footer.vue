@@ -18,8 +18,8 @@
               </ul>
 
               <div class="social-container d-flex align-items-center justify-content-start">
-                <a href="#" v-for="platform in social" :key="platform.id">
-                  <i class="fab" :class="platform.class"></i>
+                <a href="#" v-for="social in icons" :key="social.id">
+                  <i class="fab" :class="social.class"></i>
                 </a>
               </div>
             </div>
@@ -93,17 +93,8 @@ export default {
     props:{
       address: Array,
       explore: Array,
-      informations: Array
-    },
-    data(){
-      return{
-        social:[
-          {class: 'fa-facebook-square'},
-          {class: 'fa-twitter'},
-          {class: 'fa-instagram'},
-          {class: 'fa-linkedin'}
-        ]
-      }
+      informations: Array,
+      icons: Array
     }
 }
 </script>
@@ -129,7 +120,7 @@ footer{
         i{
         font-size:1.5rem;
         padding-right:30px;
-        color: lighten($grey_darker, 10%);
+        color: lighten($grey_darker, 30%);
         transition: color .5s ease;
 
           &:hover{
@@ -148,19 +139,19 @@ footer{
       @include ul-reset;
 
       li{
-        color: darken($grey_darker, 15%);
+        color: $grey_darker;
         font-weight: 300;
         font-size:0.85rem;
         margin-bottom:15px;
 
         a{
           @include a-reset;
-          color: darken($grey_darker, 15%);
+          color: $grey_darker;
           font-weight: 300;
           transition: color .5s ease;
 
           &:active, &:focus, &:visited{
-            color: darken($grey_darker, 15%);
+            color: $grey_darker;
             transition: color 1s ease;
           }
 
@@ -173,7 +164,7 @@ footer{
   
   }
   .copy{
-    color: lighten($grey_darker, 10%);
+    color: lighten($grey_darker, 30%);
     font-size:.85rem;
   }
 }
