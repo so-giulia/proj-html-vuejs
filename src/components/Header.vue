@@ -136,11 +136,18 @@ header{
           border:none;
           background-color: $light;
           border-radius: 5px;
+          border:1px solid rgba($light, 1);
+          transition: border .4s ease;
 
           &::placeholder{
             font-size:1rem;
             font-weight: 300;
             color:$grey_dark;
+          }
+          &:focus{
+            border:1px solid rgba($accent, 1);
+            transition: border .4s ease;
+            outline:none;
           }
         }
         button{
