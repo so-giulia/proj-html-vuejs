@@ -1,16 +1,89 @@
 <template>
-  <div>
+  <div class="featcard d-flex flex-column align-items-center">
+    <img :src=" require('../img/' + info.img) ">
+
+    <div class="description text-center">
+      <h4>{{info.title}}</h4>
+      <p>{{info.desc}}</p>
+    </div>
+
+    <a href="#" class="wrapper-link text-center">
+      <div class="feat-btn">
+          Start now
+          <i class="fas fa-long-arrow-alt-right arrow"></i>
+      </div>
+    </a>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'FeatCard'
+    name: 'FeatCard',
+    props:{
+      info: Object
+    }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../styles/commons.scss';
 @import '../styles/vars.scss';
+
+.featcard{
+  width:25%;
+  margin: 100px 20px 50px 20px !important;
+
+  img{
+    height:28%;
+    margin:auto;
+  }
+
+  .description{
+    margin-top:35px;
+
+    h4{
+      font-size:1.2rem;
+      margin-bottom:1.5rem;
+    }
+
+    p{
+      font-size:.85rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: $grey_darker;
+      margin-bottom:1.5rem;
+    }
+  }
+
+  .wrapper-link{
+      width:100%;
+      @include a-reset;
+      color: rgba($brand, 0.5);
+
+      .feat-btn{
+      font-size:.85rem;
+      font-weight: 500;
+      padding: 10px 0;
+      border-radius: 5px;
+      background-color: transparent;
+      color: rgba($brand, 0.5);
+
+      transition:.4s ease;
+      
+        &:hover{
+          background-color: $grey_light;
+          color: $accent;
+          transition:.4s ease;
+        }
+
+        .arrow::before{
+          margin-left:13px;
+          font-size:.85rem;
+        }
+
+      }
+    
+    }
+}
 
 </style>

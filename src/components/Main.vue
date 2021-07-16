@@ -20,14 +20,15 @@
           <div class="col-12">
             <h2 class="heading text-center">
               {{head[0].txt}}
-              <span class="accent">{{head[0].accent}}</span>
+              <span class="accent text-uppercase">{{head[0].accent}}</span>
             </h2>
           </div>
         </div>
 
         <!-- cards -->
-        <div class="row">
-          <FeatCard/>
+        <div class="d-flex justify-content-between align-items-start">
+          <FeatCard v-for="featcard in featInfo" :key="featcard.id"
+          :info="featcard"/>
         </div>
       </div>
     </section>
@@ -239,6 +240,32 @@ export default {
     props:{
       subhead: Array,
       head: Array
+    },
+    data(){
+      return{
+        featInfo:[
+          {
+            img:'home-5-image-box-01.png',
+            title: 'Idea Discussion',
+            desc: 'Get teamed up with the specialists who work and teach coding for years at famous universities.'
+          },
+          {
+            img:'home-5-image-box-02.png',
+            title: 'Web Development',
+            desc: 'Learn to start building a webpage from scratch. You decide your own pace, course and speed.'
+          },
+          {
+            img:'home-5-image-box-03.png',
+            title: 'System Administration',
+            desc: 'Learners are encouraged to study the mechanism and structure of system administration.'
+          },
+          {
+            img:'home-5-image-box-04.png',
+            title: 'Graphic Design',
+            desc: 'Have a passion for graphics and arts? Show your talents with confidence and self-assertiveness.'
+          }
+        ],
+      }
     }
 }
 </script>
@@ -256,7 +283,7 @@ export default {
 section{
   // debug
   border-bottom:1px solid black;
-  margin-bottom:80px;
+  margin-top:100px;
 
   // ———— TEXT ———— // 
   .subheading{

@@ -91,7 +91,7 @@
 export default {
     name: 'Footer',
     props:{
-      address: Array,
+      address: Object,
       explore: Array,
       informations: Array,
       icons: Array
