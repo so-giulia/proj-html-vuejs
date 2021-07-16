@@ -305,7 +305,7 @@ section{
 
   .heading{
       font-size: 3rem;
-      font-weight: 500;
+      font-weight: 600;
       color: $brand;
 
       .accent{
