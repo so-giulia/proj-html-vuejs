@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header :nav="headNav"/>
-    
+
     <Main/>
 
     <Footer :address="companyAddress"
@@ -30,6 +30,55 @@ export default {
         {txt: 'Features'},
         {txt: 'Blog'},
         {txt: 'Shop'}
+      ],
+      subheadings:[
+        {brandname: 'MAXCOACH'},
+        {h3: 'START LEARNING CODING LANGUAGES'},
+        {h3: 'DREAM WITH'},
+        {h3: 'CHOOSE WHERE YOU\'D LIKE TO BEGIN'},
+        {h3: 'WHY HESITATE TO REGISTER?'},
+        {h3: 'WHAT ARE YOU LOOKING FOR?'},
+        {h3: 'GET IN CONTACT NOW'},
+        {h3: 'PEOPLE ARE PRAISING'},
+      ],
+      headings:[
+        {
+          txt:'Build Your Dream',
+          accent: 'Today'
+        },
+        {
+          txt:'Construct A',
+          accent: 'Stunning',
+          txt2: 'Career Perspective'
+        },
+        {
+          txt: 'Latest Featured',
+          accent: 'Courses'
+        },
+        {
+          txt: 'Learn At Your Own',
+          accent: 'Pace'
+        },
+        {
+          txt: 'Learn on your',
+          accent: 'mobile',
+          txt2: 'anytime!'
+        },
+        {
+          txt: 'Upcoming',
+          accent: 'Events'
+        },
+        {
+          txt: 'What make they',
+          accent: 'love us?'
+        },
+        {
+          txt: 'Start today for getting',
+          accent: 'Online Certification'
+        },
+        {
+          txt: 'You can be your own guiding star with our help!'
+        }
       ],
       exploreNav:[
         {txt: 'Start here'},

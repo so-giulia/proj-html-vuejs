@@ -12,11 +12,11 @@
         <!-- title -->
         <div class="row">
           <div class="col-12">
-            <Subheading/>
+            <h3 class="subheading"></h3>
           </div>
 
           <div class="col-12">
-            <Heading/>
+            <h2 class="heading"></h2>
           </div>
         </div>
 
@@ -50,11 +50,11 @@
         <!-- title -->
         <div class="row">
           <div class="col-12">
-            <Subheading/>
+            <h3 class="subheading"></h3>
           </div>
           
           <div class="col-12">
-            <Heading/>
+            <h2 class="heading"></h2>
           </div>
         </div>
 
@@ -84,11 +84,11 @@
         <!-- title -->
         <div class="row">
           <div class="col-12">
-            <Subheading/>
+            <h3 class="subheading"></h3>
           </div>
           
           <div class="col-12">
-            <Heading/>
+            <h2 class="heading"></h2>
           </div>
         </div>
 
@@ -106,11 +106,11 @@
         <!-- title -->
         <div class="row">
           <div class="col-12">
-            <Subheading/>
+           <h3 class="subheading"></h3>
           </div>
           
           <div class="col-12">
-            <Heading/>
+            <h2 class="heading"></h2>
           </div>
         </div>
 
@@ -131,8 +131,6 @@
 
 <script>
 import Jumbo from './Jumbo.vue'
-import Heading from './Heading.vue'
-import Subheading from './Subheading.vue'
 import FeatCard from './FeatCard.vue'
 import CourseCard from './CourseCard.vue'
 import EventCard from './EventCard.vue'
@@ -141,8 +139,6 @@ export default {
     name: 'Main',
     components:{
       Jumbo,
-      Subheading,
-      Heading,
       FeatCard,
       CourseCard,
       EventCard
