@@ -265,6 +265,149 @@ export default {
             desc: 'Have a passion for graphics and arts? Show your talents with confidence and self-assertiveness.'
           }
         ],
+        btns:[
+          {txt: 'View all courses'},
+          {txt: 'Get started for free'},
+          {txt: 'Download Our App'},
+          {txt: 'Get started now'}
+        ],
+        accordion:[
+          {
+            title: 'Multiple Platforms Supported for Teaching & Studying',
+            content: 'MaxCoach supports the act of teaching and learning on multiple platforms like online or offline via material downloads. We know things aren’t supposed to be devoured in a short time, you can always access our knowledge base from any device.'
+          },
+          {
+            title: 'Multiple Course Participation at the Same Time',
+            content: 'Study for a number of courses at the same time is possible as long as you can afford the fee and time for completing them in the proper time. Learn at your own desired timeline and timetable. Maximum up to 5 course at a time for a learner at MaxCoach.'
+          },
+          {
+            title: 'Track Study Progress & Deliver Prompt Feedback',
+            content: 'It’s not just a normal thing to be able to build such a solid online educational system like MaxCoach where your progress is easily tracked and feedback is properly delivered. We promise to keep improving our system for better stability and flexibility.'
+          }
+        ],
+        numbers:[
+          {
+            number: '1.926',
+            subject: 'FINISHED SESSIONS'
+          },
+          {
+            number: '3.092+',
+            subject: 'ENROLLED LEARNERS'
+          },
+          {
+            number: '200',
+            subject: 'ONLINE INSTRUCTORS'
+          },
+          {
+            number: '100%',
+            subject: 'SATISFACTION RATE'
+          }
+        ],
+        courses:[
+          {
+            price: 'Free',
+            teacher: 'Owen Christ',
+            name: 'Personal Finance: Financial Security Thinking & Principles',
+            lessons: '2',
+            students: '95'
+          },
+          {
+            price: '$40',
+            teacher: 'Blanche Fields',
+            name: 'Learning to Write as a Professional Author',
+            lessons: '20',
+            students: '50'
+          },
+          {
+            price: 'Free',
+            teacher: 'Maggie Strickland',
+            name: 'Customer-centric Info-Tech Strategies',
+            lessons: '24',
+            students: '821'
+          },
+          {
+            price: '$19',
+            teacher: 'Maggie Strickland',
+            name: 'Open Programming Courses for Everyone: Python',
+            lessons: '17',
+            students: '62'
+          },
+          {
+            price: '$26',
+            teacher: 'Blanche Fields',
+            name: 'Academic Listening and Note-taking',
+            lessons: '14',
+            students: '67'
+          },
+          {
+            price: '$39',
+            teacher: 'Blanche Fields',
+            name: 'Master jQuery in a Short Period of Time',
+            lessons: '6',
+            students: '51'
+          }
+        ],
+        learnList:[
+          {tick: 'Select & customize courses to your preferences'},
+          {tick: 'Change the tutor and make arrangements'},
+          {tick: 'Participate in events to join others'},
+          {tick: 'Get the desired certificate delivered at house'}
+        ],
+        learnMobile: 'Save lessons for later and revise or write notes at any time and on multiple devices on your way. Never interfere with activities of enjoyment or other precious moments.',
+        events:[
+          {
+            city: 'Texas',
+            state: 'US',
+            name: 'Storytelling Workshop',
+            day: '22',
+            month: 'apr',
+            btn: 'Get ticket'
+          },
+          {
+            city: 'Hamburg',
+            state: 'Germany',
+            name: 'International Art Fair 2020',
+            day: '23',
+            month: 'nov',
+            btn: 'Get ticket'
+          },
+          {
+            city: 'Ilinois',
+            state: 'US',
+            name: 'Consumer Food Safety Education Conference',
+            day: '22',
+            month: 'jul',
+            btn: 'Get ticket'
+          },
+          {
+            city: 'New York',
+            state: 'US',
+            name: 'Painting Art Contest 2020',
+            day: '10',
+            month: 'oct',
+            btn: 'Get ticket'
+          },
+          {
+            city: 'Ilinois',
+            state: 'US',
+            name: 'Street Performance: Call for Artists',
+            day: '15',
+            month: 'dec',
+            btn: 'Get ticket'
+          },
+          {
+            city: 'Dubai',
+            state: '',
+            name: 'How meditation improve your mental health?',
+            day: '12',
+            month: 'aug',
+            btn: 'Get ticket'
+          }
+        ],
+        eventCta:{
+          text: 'Excited about our event?',
+          cta: 'View all events'
+        }
       }
     }
 }

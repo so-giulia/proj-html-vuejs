@@ -11,6 +11,14 @@
 </template>
 
 <script>
+// —————————————————— PROJECT —————————————————— //
+//search for 'TO ADD:' at the end in every component
+
+//MILESTONES
+//1. sections (no slider) + back to top
+//2. jumbo + accordion + side menu component
+//3. slider + interactions
+
 import Header from './components/Header.vue'
 import Main from './components/Main.vue'
 import Footer from './components/Footer.vue'
@@ -32,6 +40,11 @@ export default {
         {txt: 'Blog'},
         {txt: 'Shop'}
       ],
+      jumbo:{
+        txt: 'Complete Your Dreams in JavaS Programming',
+        desc: 'Learn any coding program in distance and for a reasonable fee. You don\'t have to struggle alone, you\'ve got our assistance and help.',
+        cta: 'Download free E-book'
+      },
       subheadings:[
         {brandname: 'MAXCOACH'},
         {h3: 'START LEARNING CODING LANGUAGES'},
