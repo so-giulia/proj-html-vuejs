@@ -1,11 +1,56 @@
 <template>
   <header>
+    <div class="container">
+      <div class="row head-wrap align-items-center">
+
+        <!-- logo -->
+        <div class="col-3">
+          <a href="#">
+            <img id="logo" src="../img/dark-logo.png" alt="Max Coach logo">
+          </a>
+        </div>
+
+        <!-- nav -->
+        <div class="col-6">
+          <nav>
+            <ul class="d-flex align-items-center">
+              <li v-for="link in nav" :key="link.id">
+                <a href="#" class="d-flex align-items-center">
+                  {{link.txt}} <i class="fas fa-chevron-down dropdown-ico"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- account / input -->
+        <div class="col-3">
+          <div class="actions-wrap d-flex align-items-center">
+            <!-- icons -->
+            <i class="fas fa-shopping-cart shopping-ico"></i>
+            <i class="far fa-user-circle"></i>
+
+            <!-- search -->
+            <form action="">
+              <input type="search" placeholder="Search...">
+              <button>
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </header>
 </template>
 
 <script>
 export default {
-    name: 'Header'
+    name: 'Header',
+    props:{
+      nav: Array
+    }
 }
 </script>
 
@@ -13,4 +58,111 @@ export default {
 @import '../styles/commons.scss';
 @import '../styles/vars.scss';
 
+header{
+  z-index:100;
+  
+  .head-wrap{
+    height:80px;
+    color:$brand;
+
+    #logo{
+      width:160px;
+    }
+
+    ul{
+      margin:0;
+      list-style:none;
+
+      li{
+        margin:0 18px;
+
+        a{
+          color:$brand;
+          text-decoration: none;
+
+          &:hover, &:visited,
+          &:focus, &:active{
+            color:$brand;
+            text-decoration: none;
+          }
+
+          .dropdown-ico::before{
+            font-size: 0.5rem;
+            line-height: 1rem;
+            vertical-align: middle;
+            margin-left:13px;
+          }
+        }
+      }
+    }
+
+    .actions-wrap{
+      i{
+        margin:0 10px;
+        font-size:1.2rem;
+        color:$dark;
+      }
+
+      .shopping-ico{
+        position: relative;
+
+        &::after{
+          content:'0';
+          width: 15px;
+          height: 15px;
+          background-color: $accent;
+          border-radius: 50%;
+
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          
+          font-family: 'Poppins', sans-serif;
+          font-size: 10px;
+          font-weight: 400;
+          line-height: 16px;
+          text-align: center;
+          color: $light;
+        }
+      }
+
+      form{
+        position:relative;
+        margin:0 10px;
+
+        input, button{
+          min-height: 50px;
+        }
+        input{
+          padding-left:20px;
+          border:none;
+          background-color: $light;
+          border-radius: 5px;
+
+          &::placeholder{
+            font-size:1rem;
+            font-weight: 300;
+            color:$grey_dark;
+          }
+        }
+        button{
+          position:absolute;
+          top:0;
+          right:0;
+          border:none;
+          background-color:transparent;
+          padding-right:10px;
+        
+          i{
+            font-size: 1rem;
+
+            &::before{
+              color:$accent;
+            }
+          }  
+        }
+      }
+    }
+  }
+}
 </style>
