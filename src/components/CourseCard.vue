@@ -141,10 +141,10 @@ export default {
     }
 
     &:hover{
-      box-shadow:0 14px 59px rgba($dark, .12);
+      box-shadow:0 10px 50px rgba($dark, .20);
 
       .main-img{
-        transform: scale(1.2);
+        transform: scale(1.1);
       }
 
       .card-details{

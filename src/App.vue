@@ -15,7 +15,7 @@
 //search for 'TO ADD:' at the end in every component
 
 //MILESTONES
-//1. sections (no slider) + back to top
+//1. sections (no slider) !!!INIT!!!  ----  + back to top
 //2. jumbo + accordion + side menu component
 //3. slider + interactions
 
