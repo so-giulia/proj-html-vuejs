@@ -34,7 +34,7 @@ export default {
 
 .featcard{
   width:25%;
-  margin: 100px 20px 50px 20px !important;
+  margin: 25px 20px 50px 20px !important;
 
   .wrapper-link{
       width:100%;

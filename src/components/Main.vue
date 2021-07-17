@@ -10,7 +10,7 @@
     <section id="features">
       <div class="container">
         <!-- title -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-75">
           <div class="col-12">
             <h3 class="subheading text-center">
               {{subhead[1].h3}}
@@ -43,7 +43,7 @@
           <div class="col-6"></div>
 
           <!-- txt col -->
-          <div class="col-6">
+          <div class="col-6 mb-40">
             <!-- title -->
             <div class="row">
               <div class="col-12">
@@ -67,9 +67,11 @@
       </div>
 
       <!-- Numbers -->
-      <div class="container-fluid">
+      <div class="numbers container-fluid">
         <div class="container">
-          <div class="row"></div>
+          <div class="d-flex justify-content-evenly align-items-center">
+            <Numbers v-for="success in numbers" :key="success.id" :info="success"/>
+          </div>
         </div>
       </div>
     </section>
@@ -79,7 +81,7 @@
     <section id="courses">
       <div class="container">
         <!-- title -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-evenly mb-75">
           <div class="col-12">
             <h3 class="subheading text-center">
               {{subhead[3].h3}}
@@ -95,8 +97,8 @@
         </div>
 
         <!-- courses cards -->
-        <div class="row">
-          <CourseCard/>
+        <div class="d-flex flex-wrap justify-content-evenly align-items-start">
+          <CourseCard v-for="course in courses" :key="course.id" :info="course"/>
         </div>
       </div>
     </section>
@@ -111,7 +113,7 @@
           <!-- txt col -->
           <div class="col-6">
             <!-- title -->
-            <div class="row">
+            <div class="row mb-40">
               <div class="col-12">
                 <h3 class="subheading">
                   {{subhead[4].h3}}
@@ -133,7 +135,7 @@
         </div>
 
         <!-- Learn: 50% 50% 2 -->
-        <div class="row">
+        <div class="row mb-40">
           <!-- image col -->
           <div class="col-6">
           </div>
@@ -166,7 +168,7 @@
     <section id="events">
       <div class="container">
         <!-- title -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-75">
           <div class="col-12">
             <h3 class="subheading text-center">
               {{subhead[6].h3}}
@@ -193,7 +195,7 @@
     <section id="reviews">
       <div class="container">
         <!-- title -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-75">
           <div class="col-12">
            <h3 class="subheading color-brand text-center">
              {{subhead[7].h3}} {{subhead[0].brandname}}
@@ -226,6 +228,7 @@
 <script>
 import Jumbo from './Jumbo.vue'
 import FeatCard from './FeatCard.vue'
+import Numbers from './Numbers.vue'
 import CourseCard from './CourseCard.vue'
 import EventCard from './EventCard.vue'
 
@@ -234,6 +237,7 @@ export default {
     components:{
       Jumbo,
       FeatCard,
+      Numbers,
       CourseCard,
       EventCard
     },
@@ -305,6 +309,8 @@ export default {
         ],
         courses:[
           {
+            img_path: 'stock-full-hd-05-480x298.jpg',
+            teacherImg_path: '73ee246daf47502812ccefc84bf02898.jpeg',
             price: 'Free',
             teacher: 'Owen Christ',
             name: 'Personal Finance: Financial Security Thinking & Principles',
@@ -312,6 +318,8 @@ export default {
             students: '95'
           },
           {
+            img_path: 'course-02-480x298.jpg',
+            teacherImg_path: '73ee246daf47502812ccefc84bf02898.jpeg',
             price: '$40',
             teacher: 'Blanche Fields',
             name: 'Learning to Write as a Professional Author',
@@ -319,6 +327,8 @@ export default {
             students: '50'
           },
           {
+            img_path: 'stock-full-hd-03-480x298.jpg',
+            teacherImg_path: '73ee246daf47502812ccefc84bf02898.jpeg',
             price: 'Free',
             teacher: 'Maggie Strickland',
             name: 'Customer-centric Info-Tech Strategies',
@@ -326,6 +336,8 @@ export default {
             students: '821'
           },
           {
+            img_path: 'stock-full-hd-04-480x298.jpg',
+            teacherImg_path: '73ee246daf47502812ccefc84bf02898.jpeg',
             price: '$19',
             teacher: 'Maggie Strickland',
             name: 'Open Programming Courses for Everyone: Python',
@@ -333,6 +345,8 @@ export default {
             students: '62'
           },
           {
+            img_path: 'stock-full-hd-06-480x298.jpg',
+            teacherImg_path: '73ee246daf47502812ccefc84bf02898.jpeg',
             price: '$26',
             teacher: 'Blanche Fields',
             name: 'Academic Listening and Note-taking',
@@ -340,6 +354,8 @@ export default {
             students: '67'
           },
           {
+            img_path: 'course-featured-image-01-480x298.jpg',
+            teacherImg_path: '73ee246daf47502812ccefc84bf02898.jpeg',
             price: '$39',
             teacher: 'Blanche Fields',
             name: 'Master jQuery in a Short Period of Time',
@@ -428,6 +444,9 @@ section{
   border-bottom:1px solid black;
   margin-top:100px;
 
+  .mb-75{margin-bottom:75px;}
+  .mb-40{margin-bottom:40px;}
+
   // ———— TEXT ———— // 
   .subheading{
       font-size:.95rem;
@@ -455,6 +474,11 @@ section{
           color: $accent;
           font-weight: 300;
       }
+  }
+
+  .numbers{
+    background: $grey_light;
+    padding:70px 0;
   }
 }
 
