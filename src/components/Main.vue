@@ -97,7 +97,7 @@
         </div>
 
         <!-- courses cards -->
-        <div class="d-flex flex-wrap justify-content-evenly align-items-start">
+        <div class="d-flex flex-wrap justify-content-between align-items-start">
           <CourseCard v-for="course in courses" :key="course.id" :info="course"/>
         </div>
       </div>
@@ -184,8 +184,8 @@
         </div>
 
         <!-- event cards -->
-        <div class="row">
-          <EventCard/>
+        <div class="row justify-content-between">
+          <EventCard v-for="event in events" :key="event.id" :info="event"/>
         </div>
       </div>
     </section>

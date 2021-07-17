@@ -1,5 +1,5 @@
 <template>
-  <div class="card course-card">
+  <div class="card course-card col-4">
     <a href="#" class="wrapper-link">
       <!-- price -->
       <span class="price text-center">
@@ -29,13 +29,13 @@
               <div class="detail-row d-flex align-items-center">
                 <!-- temporary TO ADD: real ico -->
                 <i class="far fa-file-alt details-ico"></i>
-                <span class="course-details">{{info.lessons}} Lessons</span>
+                <span>{{info.lessons}} Lessons</span>
               </div>
 
               <div class="detail-row d-flex mx-3 align-items-center">
                 <!-- temporary TO ADD: real ico -->
                 <i class="fas fa-user-alt details-ico"></i>
-                <span class="course-details">{{info.students}} Students</span>
+                <span>{{info.students}} Students</span>
               </div>
           </div>
           <!-- course details end -->
@@ -61,7 +61,7 @@ export default {
   border: none !important;
   border-radius: 10px !important;
   padding: 0 !important;
-  width: 30%;
+  width: 31.5% !important;
   margin-bottom: 40px;
   
   a{
@@ -124,14 +124,11 @@ export default {
       }
 
       h4{
-        font-size:1.25rem;
-        line-height: 1.5;
+        @include h4-titles;
       }
 
       .course-details-wrap{
-        color:$grey_darker;
-        font-weight:300;
-        font-size:.85rem;
+        @include txt-details;
         margin-top:40px;
 
         .details-ico{
@@ -141,7 +138,7 @@ export default {
     }
 
     &:hover{
-      box-shadow:0 10px 50px rgba($dark, .20);
+      box-shadow: $material;
 
       .main-img{
         transform: scale(1.1);
