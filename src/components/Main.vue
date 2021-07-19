@@ -117,33 +117,53 @@
       <div class="container">
          
         <!-- Learn: 50% 50% 1 -->
-        <div class="row">
+        <div class="row justify-content-between">
           <!-- txt col -->
-          <div class="col-6">
+          <div class="col-5">
             <!-- title -->
-            <div class="row mb-40">
+            <div class="row">
               <div class="col-12">
                 <h3 class="subheading">
                   {{subhead[4].h3}}
                 </h3>
               </div>
 
-              <div class="col-12">
+              <div class="col-10 mb-40">
                 <h2 class="heading">
                   {{head[3].txt}}
                   <span class="accent">{{head[3].accent}}</span>
                 </h2>
               </div>
+
+              <div class="col-12">
+                <!-- list -->
+                <ul class="learn-list">
+                  <li v-for="li in learnList" :key="li.id">
+                    <i class="fas fa-check"></i>
+                    {{li.tick}}
+                  </li>
+                </ul>
+
+                <!-- btn -->
+                <div class="button-mid rounded text-center">
+                  <a href="#">Get started for free</a>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- image col -->
-          <div class="col-6">
+          <div class="col-7 img-col">
+            <div class="img-wrap">
+              <img class="illo-2" src="../img/home-5-image-01.png" alt="Max Coach Learn">
+              <img class="underlay-grey" src="../img/underlay-shape-grey.svg" alt="Vector shape grey">
+              <img class="dots-circle" src="../img/maxcoach-shape-05.png" alt="circle dots shape">
+            </div>
           </div>
         </div>
 
         <!-- Learn: 50% 50% 2 -->
-        <div class="row mb-40">
+        <div class="row">
           <!-- image col -->
           <div class="col-6">
           </div>
@@ -152,13 +172,13 @@
           <div class="col-6">
             <!-- title -->
             <div class="row">
-              <div class="col-12">
+              <div class="col-12 mb-40">
                 <h3 class="subheading">
                   {{subhead[5].h3}}
                 </h3>
               </div>
 
-              <div class="col-12">
+              <div class="col-10">
                 <h2 class="heading">
                   {{head[4].txt}}
                   <span class="accent">{{head[4].accent}}</span>
@@ -494,7 +514,7 @@ section{
       position: absolute;
     }
     & > :first-child{
-      z-index: 2;
+      z-index: 3;
     }
 
     .illo-1{
@@ -506,6 +526,22 @@ section{
       right:220px;
       width:380px;
     }
+
+    .illo-2{
+      top:0;
+      left:100px;
+    }
+    .underlay-grey{
+      width:460px;
+      top:130px;
+      left: 0;
+      z-index: 2;
+    }
+    .dots-circle{
+      top:300px;
+      right:20px;
+      z-index: 1;
+    }
   } 
 
   .accordion-temp{
@@ -513,6 +549,43 @@ section{
     height: 380px;
     margin-bottom:100px;
     border: 1px solid black;
+  }
+
+  .learn-list{
+    @include ul-reset;
+
+    li{
+      font-size:.95rem;
+      color: $grey_darker;
+      font-weight: 300;
+      padding-bottom:15px;
+
+      i::before{
+        color: $accent;
+        margin-right:10px;
+        height:100%;
+      }
+    }
+  }
+
+  .button-mid{
+      @include button;
+      
+      margin-top:20px;
+      padding:10px 40px;
+      width:45%;
+
+      a{
+        @include a-reset;
+        color:$light;
+        font-size: .85rem;
+        font-weight: 500;
+      }
+  }
+
+  .img-col{
+    height:600px;
+    margin-bottom:200px;
   }
 }
 
