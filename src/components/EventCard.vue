@@ -121,6 +121,12 @@ export default {
 
       transition: .4s ease;
     }
+
+    .button-small{
+      background-color: $brand;
+      color: $light;
+      transition: background-color .4s ease;
+    }
   }
 }
 </style>
