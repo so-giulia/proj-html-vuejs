@@ -13,10 +13,11 @@
         <!-- nav -->
         <div class="col-6">
           <nav>
-            <ul class="d-flex align-items-center">
-              <li v-for="link in nav" :key="link.id">
+            <ul class="d-flex align-items-center"
+            v-for="ul in data" :key="ul.id">
+              <li v-for="li in ul.headNav" :key="li.id">
                 <a href="#" class="d-flex align-items-center">
-                  {{link.txt}} <i class="fas fa-chevron-down dropdown-ico"></i>
+                  {{li.txt}} <i class="fas fa-chevron-down dropdown-ico"></i>
                 </a>
               </li>
             </ul>
@@ -49,7 +50,7 @@
 export default {
     name: 'Header',
     props:{
-      nav: Array
+      data: Array
     }
 }
 </script>
@@ -73,7 +74,7 @@ header{
       @include ul-reset;
 
       li{
-        margin:0 18px;
+        margin:0 16px;
 
         a{
           color:$brand;

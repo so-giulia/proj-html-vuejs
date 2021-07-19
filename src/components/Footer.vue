@@ -1,24 +1,26 @@
 <template>
   <footer>
     <div class="container">
-      <div class="foot-wrap d-flex flex-column">
+      <div class="foot-wrap d-flex flex-column" v-for="item in data" :key="item.id">
           <!-- footer upper start -->
           <div class="footer-upper row justify-content-between align-items-start">
             <!-- Address -->
             <div class="col-6">
-              <h4>Address</h4>
+              <h4 v-for="h in item.titles.slice(0,1)" :key="h.id">
+                {{h.title}}
+              </h4>
 
-              <ul>
-                <li>{{address.address}}</li>
+              <ul v-for="li in item.companyAddress" :key="li.id">
+                <li>{{li.address}}</li>
                 <li>
-                  {{address.phone}}
-                  <span>{{address.openings}}</span>
+                  {{li.phone}}
+                  <span>{{li.openings}}</span>
                 </li>
-                <li>{{address.mail}}</li>
+                <li>{{li.mail}}</li>
               </ul>
 
               <div class="social-container d-flex align-items-center justify-content-start">
-                <a href="#" v-for="social in icons" :key="social.id">
+                <a href="#" v-for="social in item.social" :key="social.id">
                   <i class="fab" :class="social.class"></i>
                 </a>
               </div>
@@ -26,14 +28,16 @@
 
             <!-- Explore -->
             <div class="col-3">
-              <h4>Explore</h4>
+              <h4 v-for="h in item.titles.slice(1,2)" :key="h.id">
+                {{h.title}}
+              </h4>
 
               <div class="row">
                 <!-- explore nav part 1 -->
                 <div class="col-5 col-spacing">
                     <nav>
                       <ul>
-                        <li v-for="link in explore.slice(0,3)" :key="link.id">
+                        <li v-for="link in item.exploreNav.slice(0,3)" :key="link.id">
                           <a href="#">
                             {{link.txt}}
                           </a>
@@ -46,7 +50,7 @@
                 <div class="col-6">
                     <nav>
                       <ul>
-                        <li v-for="link in explore.slice(3,6)" :key="link.id">
+                        <li v-for="link in item.exploreNav.slice(3,6)" :key="link.id">
                           <a href="#">
                             {{link.txt}}
                           </a>
@@ -60,10 +64,12 @@
 
             <!-- Information -->
             <div class="col-3">
-              <h4>information</h4>
+              <h4 v-for="h in item.titles.slice(2,3)" :key="h.id">
+                {{h.title}}
+              </h4>
 
               <ul>
-                <li v-for="info in informations" :key="info.id">
+                <li v-for="info in item.infoNav" :key="info.id">
                    <a href="#">{{info.txt}}</a>
                 </li>
               </ul>
@@ -76,8 +82,7 @@
           <div class="footer-lower row justify-content-center align-items-center">
             <div class="col-12">
               <p class="copy text-center">
-                <!-- TO ADD: dynamic year -->
-                &copy; 2020 Maxcoach. All Rights Reserved.
+                {{item.rights}}
               </p>
             </div>
           </div>
@@ -91,10 +96,7 @@
 export default {
     name: 'Footer',
     props:{
-      address: Object,
-      explore: Array,
-      informations: Array,
-      icons: Array
+      data: Array
     }
 }
 </script>
