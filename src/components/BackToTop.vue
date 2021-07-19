@@ -1,5 +1,6 @@
 <template>
-  <div class="backtotop rounded-circle text-center d-flex justify-content-center align-items-center">
+  <div @click="scrollTop"
+  class="backtotop rounded-circle text-center d-flex justify-content-center align-items-center">
       <!-- TO ADD: real arrow -->
       <i class="fas fa-arrow-up"></i>
   </div>
@@ -7,7 +8,15 @@
 
 <script>
 export default {
-    name: 'BackToTop'
+    name: 'BackToTop',
+    methods: {
+        scrollTop(){
+            document.documentElement.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    }
 }
 </script>
 
@@ -21,6 +30,7 @@ export default {
     background-color: $accent;
     color: $light;
     box-shadow: 0 2px 7px rgba($dark, 25%);
+    cursor:pointer;
 }
 
 </style>

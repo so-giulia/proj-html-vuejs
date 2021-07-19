@@ -376,7 +376,7 @@ export default {
   position: relative;
 
   .scrolltop{
-    position:absolute;
+    position:fixed;
     bottom:20px;
     right:20px;
   }
