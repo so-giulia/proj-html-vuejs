@@ -2,7 +2,7 @@
   <div id="app">
     <Header :nav="headNav"/>
 
-    <Main :subhead="subheadings" :head="headings"/>
+    <Main :subhead="subheadings" :head="headings" :learn="learnSection"/>
 
     <Footer :address="companyAddress"
     :explore="exploreNav" :informations="infoNav"
@@ -119,6 +119,24 @@ export default {
           {class: 'fa-twitter'},
           {class: 'fa-instagram'},
           {class: 'fa-linkedin'}
+      ],
+
+      //test
+      learnSection:[
+        {
+          heading: 'Learn At Your Own',
+          accent: 'Pace',
+          h3: 'WHY HESITATE TO REGISTER?',
+
+          list:[
+            {tick: 'Select & customize courses to your preferences'},
+            {tick: 'Change the tutor and make arrangements'},
+            {tick: 'Participate in events to join others'},
+            {tick: 'Get the desired certificate delivered at house'}
+          ],
+
+          cta:'Get started for free'
+        }
       ]
     }
   }

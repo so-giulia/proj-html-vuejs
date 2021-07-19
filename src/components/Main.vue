@@ -123,30 +123,30 @@
             <!-- title -->
             <div class="row">
               <div class="col-12">
-                <h3 class="subheading">
-                  {{subhead[4].h3}}
+                <h3 class="subheading" v-for="subhead in learn" :key="subhead.id">
+                  {{subhead.h3}}
                 </h3>
               </div>
 
               <div class="col-10 mb-40">
-                <h2 class="heading">
-                  {{head[3].txt}}
-                  <span class="accent">{{head[3].accent}}</span>
+                <h2 class="heading" v-for="title in learn" :key="title.id">
+                  {{title.heading}}
+                  <span class="accent">{{title.accent}}</span>
                 </h2>
               </div>
 
               <div class="col-12">
                 <!-- list -->
-                <ul class="learn-list">
-                  <li v-for="li in learnList" :key="li.id">
+                <ul class="learn-list" v-for="ul in learn" :key="ul.id">
+                  <li v-for="li in ul.list" :key="li.id">
                     <i class="fas fa-check"></i>
                     {{li.tick}}
                   </li>
                 </ul>
 
                 <!-- btn -->
-                <div class="button-mid rounded text-center">
-                  <a href="#">Get started for free</a>
+                <div class="button-mid rounded text-center" v-for="btn in learn" :key="btn.id">
+                  <a href="#">{{btn.cta}}</a>
                 </div>
               </div>
             </div>
@@ -271,7 +271,8 @@ export default {
     },
     props:{
       subhead: Array,
-      head: Array
+      head: Array,
+      learn: Array
     },
     data(){
       return{

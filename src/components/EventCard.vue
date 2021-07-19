@@ -36,7 +36,7 @@
 export default {
     name: 'EventCard',
     props:{
-      info: Array
+      info: Object
     }
 }
 </script>

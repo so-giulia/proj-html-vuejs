@@ -48,7 +48,7 @@
 export default {
     name: 'CourseCard',
     props:{
-      info: Array
+      info: Object
     }
 }
 </script>

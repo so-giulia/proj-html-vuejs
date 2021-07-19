@@ -9,7 +9,7 @@
 export default {
     name: 'Numbers',
     props:{
-        info: Array
+        info: Object
     }
 }
 </script>
