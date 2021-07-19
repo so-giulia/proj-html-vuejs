@@ -82,7 +82,7 @@
           <div class="footer-lower row justify-content-center align-items-center">
             <div class="col-12">
               <p class="copy text-center">
-                {{item.rights}}
+                &copy; {{item.rights}}
               </p>
             </div>
           </div>

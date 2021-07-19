@@ -83,7 +83,7 @@ export default {
                 {class: 'fa-instagram'},
                 {class: 'fa-linkedin'}
             ],
-            rights: '&copy; 2020 Maxcoach. All Rights Reserved.'
+            rights: '2020 Maxcoach. All Rights Reserved.'
           }
         ],
         sections:{
