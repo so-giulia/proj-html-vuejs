@@ -71,6 +71,7 @@ p{margin:0;}
 // ———————— buttons ———————— //
 
 @mixin button{
+    display: inline-block;
     background-color: $accent;
     color: $light;
     transition: background-color .4s ease;
@@ -81,4 +82,11 @@ p{margin:0;}
         color: $light;
         transition: background-color .4s ease;
     }
+}
+
+@mixin button-a{
+    @include a-reset;
+    color:$light;
+    font-size: .85rem;
+    font-weight: 500;
 }

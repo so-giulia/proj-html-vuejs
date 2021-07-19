@@ -146,9 +146,9 @@
                 </ul>
 
                 <!-- btn -->
-                <div class="button-mid rounded text-center" v-for="btn in data.learn1" :key="btn.id">
+                <span class="button-mid rounded text-center" v-for="btn in data.learn1" :key="btn.id">
                   <a href="#">{{btn.cta}}</a>
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -215,9 +215,9 @@
                 </p>
 
                 <!-- btn -->
-                <div class="button-mid rounded text-center" v-for="btn in data.learn2" :key="btn.id">
+                <span class="button-mid rounded text-center" v-for="btn in data.learn2" :key="btn.id">
                   <a href="#">{{btn.cta}}</a>
-                </div>
+                </span>
               </div>
             
             </div>
@@ -472,21 +472,14 @@ section{
 
   //buttons
   .button-mid{
-      @include button;
-      
-      margin-top:20px;
-      padding:10px 40px;
-      width:45%;
+    @include button;
+    margin-top:35px;
+    padding:10px 40px;
 
-      a{
-        @include a-reset;
-        color:$light;
-        font-size: .85rem;
-        font-weight: 500;
-      }
+    a{
+      @include button-a;
+    }
   }
-
-  
 }
 
 </style>

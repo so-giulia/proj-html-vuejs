@@ -18,7 +18,7 @@
 
 //MILESTONES
 //1. sections (no slider) OK ----  + back to top OK (TO ADD: real behavior)
-//2. jumbo + accordion + side menu component
+//2. jumbo OK + accordion + side menu component
 //3. slider + interactions
 
 import Header from './components/Header.vue'
