@@ -61,6 +61,7 @@ export default {
 
 header{
   z-index:100;
+  background-color: lighten($grey_dark, 3%);
   
   .head-wrap{
     height:80px;

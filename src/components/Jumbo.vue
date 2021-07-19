@@ -44,7 +44,7 @@ export default {
 @import '../styles/vars.scss';
 
 .jumbo{
-    height: 800px;
+    height: 720px;
     position: relative;
 
     .overlay{

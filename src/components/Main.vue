@@ -355,7 +355,6 @@ export default {
 @import '../styles/vars.scss';
 
 #jumbotron{
-  margin-top:-80px;
   background-color: lighten($grey_dark, 3%);
 }
 
