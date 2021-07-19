@@ -172,13 +172,13 @@
           <div class="col-6">
             <!-- title -->
             <div class="row">
-              <div class="col-12 mb-40">
+              <div class="col-12">
                 <h3 class="subheading">
                   {{subhead[5].h3}}
                 </h3>
               </div>
 
-              <div class="col-10">
+              <div class="col-12 mb-40">
                 <h2 class="heading">
                   {{head[4].txt}}
                   <span class="accent">{{head[4].accent}}</span>
