@@ -118,8 +118,12 @@
             </a>
           </span>
         </div>
+      </div>
 
-        
+      <div class="courses-shape">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" height="100">
+          <path d="M 0 0 L0 100 L100 100 L100 0 Q 50 200 0 0"></path>
+        </svg>
       </div>
     </section>
     <!-- ———————— COURSES END ———————— -->
@@ -340,8 +344,6 @@ export default {
 }
 
 section{
-  // debug
-  border-bottom:1px solid black;
   margin-top:100px;
 
   .mb-75{margin-bottom:75px;}
@@ -500,10 +502,12 @@ section{
   }
   .button-large{
     @include button;
+
     padding:15px 65px;
-    margin:35px auto 100px auto;
+    margin:35px auto 0 auto;
     a{
       @include a-reset;
+      @include button-a;
       color:$light;
 
       .arrow::before{
@@ -523,16 +527,67 @@ section{
     }
 
     .btn-accent{
+        position:relative;
         color:$accent;
         font-weight: 600;
-        border-bottom:1px solid $grey_dark;
         margin:2px;
+        cursor:pointer;
+        transition:.4s ease;
 
         .arrow::before{
           margin-left: 4px;
+        }
+
+        &::after{
+          content:'';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background-color: $accent;
+          transition: .35s;
+          cursor: pointer;
+        }
+
+        &:hover::after{
+          width: 100%;
+          transition: .35s;
+          transition-delay: .35s;
+        }
+
+        &::before{
+          content:'';
+          position: absolute;
+          bottom: -5px;
+          right: 0;
+          width: 100%;
+          height: 1px;
+          background-color: $grey_dark;
+          cursor: pointer;
+
+          transition: .35s;
+          transition-delay: .35s;
+        }
+
+        &:hover::before{
+          width: 0;
+          transition: .35s;
         }
     }
   }
 }
 
+#courses{
+  background: linear-gradient(180deg, $light 0%, $grey_light 100%);
+
+  .courses-shape{
+    color:$light;
+
+    svg{
+      width:100%;
+      fill: $light;
+    }
+  }
+}
 </style>
