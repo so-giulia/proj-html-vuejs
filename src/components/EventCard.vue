@@ -5,6 +5,7 @@
       <div class="col-8">
         <!-- event location -->
         <div class="location-wrap d-flex align-items-center">
+          <!-- TO ADD: real icon -->
           <i class="fas fa-map-marker-alt"></i>
           <span class="city">{{info.city}},</span><span>{{info.state}}</span>
         </div>

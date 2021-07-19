@@ -40,10 +40,16 @@
       <div class="container">
         <div class="row">
           <!-- image col -->
-          <div class="col-6"></div>
+          <div class="col-6">
+            <div class="img-wrap">
+              <img class="illo-1" src="../img/about-us-03-image-01.png" alt="Max Coach About Us">
+              <img class="underlay-lilla" src="../img/underlay-shape-lilla.svg" alt="Vector shape">
+            </div>
+            
+          </div>
 
           <!-- txt col -->
-          <div class="col-6 mb-40">
+          <div class="col-6">
             <!-- title -->
             <div class="row">
               <div class="col-12">
@@ -52,16 +58,18 @@
                 </h3>
               </div>
 
-              <div class="col-12">
+              <div class="col-12 mb-40">
                 <h2 class="heading">
                   {{head[1].txt}}
                   <span class="accent">{{head[1].accent}}</span>
                   {{head[1].txt2}}
                 </h2>
               </div>
+
+              <div class="col-12">
+                <div class="accordion-temp"></div>
+              </div>
             </div>
-
-
           </div>
         </div>
       </div>
@@ -476,6 +484,35 @@ section{
   .numbers{
     background: $grey_light;
     padding:70px 0;
+  }
+
+  // ———— 50% 50% ———— //
+  .img-wrap{
+    position: relative;
+
+    & > *{
+      position: absolute;
+    }
+    & > :first-child{
+      z-index: 2;
+    }
+
+    .illo-1{
+      top:0;
+      right:80px;
+    }
+    .underlay-lilla{
+      top:100px;
+      right:220px;
+      width:380px;
+    }
+  } 
+
+  .accordion-temp{
+    width:100%;
+    height: 380px;
+    margin-bottom:100px;
+    border: 1px solid black;
   }
 }
 
