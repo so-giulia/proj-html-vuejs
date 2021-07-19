@@ -541,7 +541,7 @@ section{
         &::after{
           content:'';
           position: absolute;
-          bottom: -5px;
+          bottom: -1.5px;
           left: 0;
           width: 0;
           height: 1px;
@@ -559,7 +559,7 @@ section{
         &::before{
           content:'';
           position: absolute;
-          bottom: -5px;
+          bottom: -1.5px;
           right: 0;
           width: 100%;
           height: 1px;
