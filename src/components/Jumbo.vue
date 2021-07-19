@@ -82,7 +82,7 @@ export default {
 
       .button-mid{
         @include button;
-        padding:13px 40px;
+        padding:15px 40px;
 
         .download-ico{
           display: inline-block;

@@ -109,7 +109,17 @@
         <div class="d-flex flex-wrap justify-content-between align-items-start"
         v-for="item in data.courses" :key="item.id">
           <CourseCard v-for="course in item.coursesInfo" :key="course.id" :info="course"/>
+
+          <span class="button-large text-center rounded">
+            <a href="#">
+              {{item.cta}}
+              <!-- TO ADD: real arrow -->
+              <i class="fas fa-long-arrow-alt-right arrow"></i>
+            </a>
+          </span>
         </div>
+
+        
       </div>
     </section>
     <!-- ———————— COURSES END ———————— -->
@@ -250,6 +260,14 @@
         <div class="row justify-content-between"
         v-for="item in data.events" :key="item.id">
           <EventCard v-for="event in item.eventsInfo" :key="event.id" :info="event"/>
+
+          <span class="pre-btn">
+            <a href="#">{{item.ctaText}}</a>
+            <span class="btn-accent">
+              {{item.cta}}
+              <i class="fas fa-long-arrow-alt-right arrow"></i>
+            </span>
+          </span>
         </div>
       </div>
     </section>
@@ -474,10 +492,45 @@ section{
   .button-mid{
     @include button;
     margin-top:35px;
-    padding:10px 40px;
+    padding:15px 40px;
 
     a{
       @include button-a;
+    }
+  }
+  .button-large{
+    @include button;
+    padding:15px 65px;
+    margin:35px auto 100px auto;
+    a{
+      @include a-reset;
+      color:$light;
+
+      .arrow::before{
+        margin-left:4px;
+      }
+    }
+    
+  }
+  .pre-btn{
+    display: inline-block;
+    margin:65px auto 0 auto;
+    width: fit-content;
+
+    a{
+      @include a-reset;
+      color:$grey_darker;
+    }
+
+    .btn-accent{
+        color:$accent;
+        font-weight: 600;
+        border-bottom:1px solid $grey_dark;
+        margin:2px;
+
+        .arrow::before{
+          margin-left: 4px;
+        }
     }
   }
 }

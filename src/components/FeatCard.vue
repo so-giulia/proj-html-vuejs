@@ -13,6 +13,7 @@
       <!-- btn -->
       <div class="feat-btn">
           Start now
+           <!-- TO ADD: real arrow -->
           <i class="fas fa-long-arrow-alt-right arrow"></i>
       </div>
     </a>
