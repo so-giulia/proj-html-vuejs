@@ -233,16 +233,24 @@ export default {
               {tick: 'Participate in events to join others'},
               {tick: 'Get the desired certificate delivered at house'}
             ],
+            img: 'home-5-image-01.png',
+            underlay: 'underlay-shape-grey.svg',
+            shape:'maxcoach-shape-05.png',
             cta:'Get started for free'
           }
         ],
         learn2:[
           {
+            //TO ADD: outline circle svg ?? missing
             heading: 'Learn on your',
             accent: 'mobile',
             heading2: 'anytime!',
             h3: 'GET IN CONTACT NOW',
             desc:'Save lessons for later and revise or write notes at any time and on multiple devices on your way. Never interfere with activities of enjoyment or other precious moments.',
+            img: 'home-5-image-02.png',
+            underlay: 'underlay-shape-grey.svg',
+            shape:'maxcoach-shape-07.png',
+            lines:'maxcoach-shape-01.png',
             cta:'Download our app'
           }
         ],

@@ -117,7 +117,6 @@
     <!-- ———————— LEARN START ———————— -->
     <section id="learn">
       <div class="container">
-         
         <!-- Learn: 50% 50% 1 -->
         <div class="row justify-content-between">
           <!-- txt col -->
@@ -156,24 +155,43 @@
 
           <!-- image col -->
           <div class="col-7 img-col">
-            <div class="img-wrap">
-              <img class="illo-2" src="../img/home-5-image-01.png" alt="Max Coach Learn">
-              <img class="underlay-grey" src="../img/underlay-shape-grey.svg" alt="Vector shape grey">
-              <img class="dots-circle" src="../img/maxcoach-shape-05.png" alt="circle dots shape">
+            <div class="img-wrap" v-for="item in data.learn1" :key="item.id">
+              <img class="illo-2"
+              :src="require('../img/' + item.img)" alt="Max Coach Learn">
+
+              <img class="underlay-grey"
+              :src="require('../img/' + item.underlay)" alt="Vector shape grey">
+
+              <img class="dots-circle"
+              :src="require('../img/' + item.shape)" alt="circle dots shape">
             </div>
           </div>
         </div>
 
         <!-- Learn: 50% 50% 2 -->
-        <div class="row">
+        <div class="row justify-content-between">
           <!-- image col -->
-          <div class="col-6">
+          <div class="col-5 img-col-2">
+            <div class="img-wrap" v-for="item in data.learn2" :key="item.id">
+              <img class="illo-3"
+              :src="require('../img/' + item.img)" alt="Max Coach Learn">
+
+              <img class="lines"
+              :src="require('../img/' + item.lines)" alt="Vector colored lines">
+
+              <img class="dots-square"
+              :src="require('../img/' + item.shape)" alt="Square dots shape">
+
+              <img class="underlay-grey grey-2"
+              :src="require('../img/' + item.underlay)" alt="Vector shape grey">
+            </div>
           </div>
 
           <!-- txt col -->
-          <div class="col-6">
+          <div class="col-6 learn2-txt-wrap">
             <!-- title -->
             <div class="row">
+
               <div class="col-12">
                 <h3 class="subheading" v-for="subhead in data.learn2" :key="subhead.id">
                   {{subhead.h3}}
@@ -187,6 +205,19 @@
                   {{title.heading2}}
                 </h2>
               </div>
+
+              <div class="col-10">
+                <p class="learn-paragraph"
+                v-for="text in data.learn2" :key="text.id">
+                  {{text.desc}}
+                </p>
+
+                <!-- btn -->
+                <div class="button-mid rounded text-center" v-for="btn in data.learn2" :key="btn.id">
+                  <a href="#">{{btn.cta}}</a>
+                </div>
+              </div>
+            
             </div>
           </div>
         </div>
@@ -329,6 +360,8 @@ section{
   }
 
   // ———— 50% 50% ———— //
+
+  // images
   .img-wrap{
     position: relative;
 
@@ -357,29 +390,53 @@ section{
       width:460px;
       top:130px;
       left: 0;
-      z-index: 2;
+      z-index: 1;
     }
     .dots-circle{
       top:300px;
       right:20px;
-      z-index: 1;
+      z-index: 2;
     }
-  } 
 
+    .illo-3{
+      top:-100px;
+      right:0;
+    }
+    .lines{
+      top: 120px;
+      left: -150px;
+      z-index: 2;
+    }
+    .dots-square{
+      top:150px;
+      right:-85px;
+      z-index: 2;
+    }
+    .grey-2{
+      width: 480px;
+      top:-35px;
+      left:-60px;
+    }
+  }
+
+  //accordion
   .accordion-temp{
     width:100%;
     height: 380px;
     margin-bottom:100px;
     border: 1px solid black;
   }
-
+  
+  //learn1
+  .img-col{
+    height:600px;
+    margin-bottom:200px;
+  }
   .learn-list{
     @include ul-reset;
 
     li{
-      font-size:.95rem;
-      color: $grey_darker;
-      font-weight: 300;
+      @include section-paragraph;
       padding-bottom:15px;
 
       i::before{
@@ -390,6 +447,20 @@ section{
     }
   }
 
+  //learn2
+  .img-col-2{
+    height:450px;
+  }
+  .learn2-txt-wrap{
+    margin-right:-90px;
+
+    .learn-paragraph{
+      @include section-paragraph;
+      margin-bottom: 45px;
+    }
+  }
+
+  //buttons
   .button-mid{
       @include button;
       
@@ -405,10 +476,7 @@ section{
       }
   }
 
-  .img-col{
-    height:600px;
-    margin-bottom:200px;
-  }
+  
 }
 
 
