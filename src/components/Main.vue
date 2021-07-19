@@ -303,8 +303,24 @@
         </div>
 
         <!-- call to action -->
-        <div class="cta">
-            <!-- CONTENT HERE -->
+        <div class="cta text-center" v-for="item in data.callToAction" :key="item.id">
+            <!-- text -->
+            <h3 class="cta-subheading">
+              {{item.subheading}}
+              <span class="subheading-accent">{{item.subheadingAccent}}</span>
+            </h3>
+            <h2 class="cta-heading">{{item.heading}}</h2>
+           
+            <!-- button -->
+            <span class="button-large rounded">
+              <a href="#">{{item.cta}}</a>
+            </span>
+
+            <div class="img-wrap">
+              <div class="circle cta-circle rounded-circle"></div>
+              <img class="cta-lines" :src="require('../img/' + item.lines)" alt="Vector colored lines">
+              <img class="cta-circles" :src="require('../img/' + item.circles)" alt="Vector colored lines">
+            </div>  
         </div>
       </div>
     </section>
@@ -587,6 +603,50 @@ section{
     svg{
       width:100%;
       fill: $light;
+    }
+  }
+}
+
+#reviews{
+  background-color: $grey_light;
+  padding:120px 0 100px 0;
+
+  .cta{
+    position: relative;
+
+    //cta
+    .cta-subheading{
+      font-size:1.5rem;
+      font-weight: 600;
+      color:$brand;
+
+      .subheading-accent{
+        font-weight: 300;
+        color:$accent;
+      }
+    }
+    .cta-heading{
+      font-size:2rem;
+      font-weight: 600;
+      color:$brand;
+    }
+
+    img{
+      position: absolute;
+    }
+
+    .cta-lines{
+      top: -90px;
+      left: 0;
+    }
+    .cta-circles{
+      bottom: -20px;
+      right: 0;
+    }
+    .cta-circle{
+      top: -170px;
+      right: 0;
+      left: 0;
     }
   }
 }

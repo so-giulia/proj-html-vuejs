@@ -362,7 +362,9 @@ export default {
               subheading: 'Start today for getting',
               subheadingAccent: 'Online Certification',
               heading: 'You can be your own guiding star with our help!',
-              cta: 'Get started now'
+              cta: 'Get started now',
+              lines:'maxcoach-shape-01.png',
+              circles:'maxcoach-shape-02.png'
             }
             
           ]
