@@ -10,12 +10,15 @@
 
 body{font-family: 'Poppins', sans-serif;}
 p{margin:0;}
-
 .container{max-width: 1200px !important;}
+
 
 // ———————————————————————————————————————————————— // 
 // ———————————————————— MIXINS ———————————————————— // 
 // ———————————————————————————————————————————————— //
+
+
+// ———————— links ———————— //
 
 @mixin ul-reset {
     margin:0;
@@ -31,6 +34,10 @@ p{margin:0;}
     }
 }
 
+
+
+// ———————— text ———————— //
+
 @mixin txt-details {
     color:$grey_darker;
     font-weight:300;
@@ -40,4 +47,33 @@ p{margin:0;}
 @mixin h4-titles {
     font-size:1.25rem;
     line-height: 1.5;
+}
+
+@mixin accent {
+    font-size: 3rem;
+    color: $accent;
+    font-weight: 300;
+}
+
+@mixin caption-uppercase {
+    font-size:.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+
+// ———————— buttons ———————— //
+
+@mixin button{
+    background-color: $accent;
+    color: $light;
+    transition: background-color .4s ease;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $brand;
+        color: $light;
+        transition: background-color .4s ease;
+    }
 }

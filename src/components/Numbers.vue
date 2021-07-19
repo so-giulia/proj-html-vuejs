@@ -25,9 +25,7 @@ export default {
 }
 .subject{
     color:$brand;
-    font-size:.95rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
     font-weight: 600;
+    @include caption-uppercase;
 }
 </style>

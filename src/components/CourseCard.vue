@@ -145,7 +145,7 @@ export default {
       }
 
       .card-details{
-        background-color: #fff !important;
+        background-color: $light !important;
       }
 
       transition: 1s ease;

@@ -449,9 +449,7 @@ section{
 
   // ———— TEXT ———— // 
   .subheading{
-      font-size:.95rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      @include caption-uppercase;
       font-weight: 400;
       margin-bottom:20px;
       color:$grey_darker;
@@ -471,8 +469,7 @@ section{
       color: $brand;
 
       .accent{
-          color: $accent;
-          font-weight: 300;
+          @include accent;
       }
   }
 
