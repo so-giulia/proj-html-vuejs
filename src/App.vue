@@ -5,6 +5,10 @@
     <Main :data="sections"/>
 
     <Footer :data="footer"/>
+
+    <div class="scrolltop">
+      <BackToTop/>
+    </div>
   </div>
 </template>
 
@@ -13,20 +17,22 @@
 //search for 'TO ADD:' at the end in every component
 
 //MILESTONES
-//1. sections (no slider) !!!INIT!!!  ----  + back to top
+//1. sections (no slider) OK (circle svg)  ----  + back to top
 //2. jumbo + accordion + side menu component
 //3. slider + interactions
 
 import Header from './components/Header.vue'
 import Main from './components/Main.vue'
 import Footer from './components/Footer.vue'
+import BackToTop from './components/BackToTop.vue'
 
 export default {
   name: 'App',
   components:{
     Header,
     Main,
-    Footer
+    Footer,
+    BackToTop
   },
   data(){
     return{
@@ -365,6 +371,16 @@ export default {
 <style lang="scss">
 @import './styles/commons.scss';
 @import './styles/vars.scss';
+
+#app{
+  position: relative;
+
+  .scrolltop{
+    position:absolute;
+    bottom:20px;
+    right:20px;
+  }
+}
 
 
 </style>
