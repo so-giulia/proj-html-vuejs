@@ -17,7 +17,7 @@
 //search for 'TO ADD:' at the end in every component
 
 //MILESTONES
-//1. sections (no slider) OK (circle svg)  ----  + back to top
+//1. sections (no slider) OK ----  + back to top OK (TO ADD: real behavior)
 //2. jumbo + accordion + side menu component
 //3. slider + interactions
 

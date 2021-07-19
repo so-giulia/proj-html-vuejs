@@ -182,6 +182,8 @@
               <img class="dots-square"
               :src="require('../img/' + item.shape)" alt="Square dots shape">
 
+              <div class="circle rounded-circle"></div>
+
               <img class="underlay-grey grey-2"
               :src="require('../img/' + item.underlay)" alt="Vector shape grey">
             </div>
@@ -409,13 +411,22 @@ section{
     }
     .dots-square{
       top:150px;
-      right:-85px;
+      right:-105px;
       z-index: 2;
     }
     .grey-2{
       width: 480px;
       top:-35px;
       left:-60px;
+    }
+    .circle{
+      border:8px solid $shape;
+      width: 60px;
+      height: 60px;
+      
+      top:-50px;
+      right:-100px;
+      z-index: 2;
     }
   }
 
@@ -479,9 +490,4 @@ section{
   
 }
 
-.scrolltop{
-  position:absolute;
-  bottom:20px;
-  right:20px;
-}
 </style>
