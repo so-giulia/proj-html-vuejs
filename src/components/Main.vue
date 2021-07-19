@@ -42,9 +42,9 @@
         <div class="row">
           <!-- image col -->
           <div class="col-6">
-            <div class="img-wrap">
-              <img class="illo-1" src="../img/about-us-03-image-01.png" alt="Max Coach About Us">
-              <img class="underlay-lilla" src="../img/underlay-shape-lilla.svg" alt="Vector shape">
+            <div class="img-wrap" v-for="item in data.dream" :key="item.id">
+              <img class="illo-1" :src="require('../img/' + item.img)" alt="Max Coach About Us">
+              <img class="underlay-lilla" :src="require('../img/' + item.underlay)" alt="Vector shape">
             </div>
             
           </div>

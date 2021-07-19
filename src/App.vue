@@ -145,7 +145,9 @@ export default {
                   title: 'Track Study Progress & Deliver Prompt Feedback',
                   content: 'It’s not just a normal thing to be able to build such a solid online educational system like MaxCoach where your progress is easily tracked and feedback is properly delivered. We promise to keep improving our system for better stability and flexibility.'
                 }
-              ]
+              ],
+              img:'about-us-03-image-01.png',
+              underlay:'underlay-shape-lilla.svg'
             }
           ],
           numbers:[
