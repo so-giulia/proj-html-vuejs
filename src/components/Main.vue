@@ -1,8 +1,8 @@
 <template>
   <main>
     <!-- ———————— JUMBO START ———————— -->
-    <div id="jumbotron">
-      <Jumbo/>
+    <div id="jumbotron" v-for="jumboInfo in data.jumbo" :key="jumboInfo.id">
+      <Jumbo :jumbo="jumboInfo"/>
     </div>
     <!-- ———————— JUMBO END ———————— -->
 
@@ -318,7 +318,6 @@ export default {
 
 #jumbotron{
   margin-top:-80px;
-  height:800px;
   background-color: lighten($grey_dark, 3%);
 }
 

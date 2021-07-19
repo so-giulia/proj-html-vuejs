@@ -89,6 +89,8 @@ export default {
         sections:{
           jumbo:[
             {
+              img:'home-5-hero-image.png',
+              overlay: 'jumbo-overlay.svg',
               title: 'Complete Your Dreams in JavaS Programming',
               paragraph: 'Learn any coding program in distance and for a reasonable fee. You don\'t have to struggle alone, you\'ve got our assistance and help.',
               cta: 'Download free E-book'
