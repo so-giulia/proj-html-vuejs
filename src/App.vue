@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+
+    <SideNav :data="sideNav"/>
+
     <Header :data="header"/>
 
     <Main :data="sections"/>
@@ -18,9 +21,10 @@
 
 //MILESTONES
 //1. sections (no slider) OK ----  + back to top OK (TO ADD: real behavior)
-//2. jumbo OK + accordion + side menu component
+//2. jumbo OK + accordion OK + side menu component
 //3. slider + interactions
 
+import SideNav from './components/SideNav.vue'
 import Header from './components/Header.vue'
 import Main from './components/Main.vue'
 import Footer from './components/Footer.vue'
@@ -29,6 +33,7 @@ import BackToTop from './components/BackToTop.vue'
 export default {
     name: 'App',
     components:{
+      SideNav,
       Header,
       Main,
       Footer,
@@ -373,6 +378,14 @@ export default {
               circles:'maxcoach-shape-02.png'
             }
             
+          ]
+        },
+        sideNav:{
+          classes:[
+            {class: 'fa-ruler-combined'},
+            {class: 'fa-life-ring'},
+            {class: 'fa-book'},
+            {class: 'fa-shopping-cart'}
           ]
         }
       }
