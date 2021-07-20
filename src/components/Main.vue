@@ -71,12 +71,12 @@
                 <div class="accordion-temp" v-for="item in data.dream" :key="item.id">
 
                   <div class="my-accordion rounded"
-                  :class="{accordionClasses}"
-                  v-for="(accordion, index) in item.accordion" :key="index">
+                  v-for="(accordion, index) in item.accordion" :key="index"
+                  :class="(index != counter) ? 'closed' : ''">
                       <div class="accordion-top rounded-top d-flex align-items-center justify-content-between"
                       @click="toggleAccordion(index)">
                           {{accordion.title}}
-                          <i class="fas" :class="iconClasses"></i>
+                          <i class="fas" :class="(index === counter) ? 'fa-minus-circle' : 'fa-plus-circle'"></i>
                       </div>
 
                       <div class="accordion-content rounded-bottom">
@@ -370,7 +370,11 @@ export default {
         return{
             open: true,
             icon: false,
-            counter: 0
+
+            counter: 0,
+            activeAccordion: 'is-closed',
+            activeIcon: 'fa-minus-circle',
+            inactiveIcon: 'fa-plus-circle'
         }
     },
     computed:{
@@ -390,9 +394,9 @@ export default {
         toggleAccordion(index){
             this.counter = index;
             console.log(this.counter);
-
-            this.open = !this.open;
-            this.icon = !this.icon;
+            
+            // this.open = !this.open;
+            // this.icon = !this.icon;
         }
             
     }
@@ -476,7 +480,7 @@ section{
     
   }
 
-  .is-closed{
+  .closed{
 
       .accordion-top{
           background: $light;
