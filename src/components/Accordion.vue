@@ -1,33 +1,28 @@
 <template>
-  <!-- <div class="my-accordion rounded" :class="accordionClasses">
-      <div class="accordion-top rounded-top d-flex align-items-center justify-content-between"
-      @click="toggleAccordion">
-          {{info.title}}
-          <i class="fas" :class="iconClasses"></i>
-      </div>
+    <div class="wrap">
+        <!-- accordion all start -->
+        <div class="my-accordion rounded"
+        :class="[{open : item.active}, {closed : !item.active}]"
+        v-for="(item, index) in customAccordion" :key="index">
 
-      <div class="accordion-content rounded-bottom">
-          <p>{{info.content}}</p>
-      </div>
-  </div> -->
+            <!-- accordion head start -->
+            <div class="accordion-top rounded-top d-flex align-items-center justify-content-between"
+            @click="showContent(index)">
+                {{item.header}}
+                <i class="fas"
+                :class="(item.active) ? 'fa-minus-circle' : 'fa-plus-circle'"></i>
+            </div>
+            <!-- accordion head end -->
 
-<div class="wrap">
-    <div class="my-accordion rounded" :class="[{open : item.active}, {closed : !item.active}]"
-    v-for="(item, index) in customAccordion" :key="index">
+            <!-- accordion body start -->
+            <div class="accordion-content">
+                <p>{{item.body}}</p>
+            </div>
+            <!-- accordion body end -->
 
-      <div class="accordion-top rounded-top d-flex align-items-center justify-content-between"
-      @click="showContent(index)">
-          {{item.header}}
-          <i class="fas"
-          :class="(item.active) ? 'fa-minus-circle' : 'fa-plus-circle'"></i>
-      </div>
-
-      <div class="accordion-content">
-          <p>{{item.body}}</p>
-      </div>
+        </div>
+        <!-- accordion all end -->
     </div>
-</div>
-  
 </template>
 
 <script>
@@ -38,7 +33,8 @@ export default {
     },
     data(){
         return{
-            accordionItems:[]
+            accordionItems:[],
+            counter: 1,
         }
     },
     computed:{
@@ -51,8 +47,8 @@ export default {
                 }
             });
             
+            this.accordionItems[0].active = true;
             return this.accordionItems;
-            
         }
     },
     methods:{
@@ -64,7 +60,7 @@ export default {
                     item.active = false;
                 }
             });
-        }
+        },
     }
 }
 </script>
