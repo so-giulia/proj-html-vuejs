@@ -68,7 +68,10 @@
               </div>
 
               <div class="col-12">
-                <div class="accordion-temp"></div>
+                <div class="accordion-temp" v-for="item in data.dream" :key="item.id">
+                  <Accordion v-for="accordion in item.accordion" :key="accordion.id"
+                  :info="accordion"/>
+                </div>
               </div>
             </div>
           </div>
@@ -331,6 +334,7 @@
 <script>
 import Jumbo from './Jumbo.vue'
 import FeatCard from './FeatCard.vue'
+import Accordion from './Accordion.vue'
 import Numbers from './Numbers.vue'
 import CourseCard from './CourseCard.vue'
 import EventCard from './EventCard.vue'
@@ -340,6 +344,7 @@ export default {
     components:{
       Jumbo,
       FeatCard,
+      Accordion,
       Numbers,
       CourseCard,
       EventCard
@@ -467,9 +472,7 @@ section{
   //accordion
   .accordion-temp{
     width:100%;
-    height: 380px;
     margin-bottom:100px;
-    border: 1px solid black;
   }
   
   //learn1
