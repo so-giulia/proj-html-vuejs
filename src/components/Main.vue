@@ -69,7 +69,7 @@
 
               <div class="col-12">
                 <div class="accordion-temp" v-for="item in data.dream" :key="item.id">
-                      <div class="my-accordion rounded"
+                      <!-- <div class="my-accordion rounded"
                       v-for="(accordion, index) in item.accordion" :key="index"
                       :class="[{closed : index != counter}, {show : index === counter && v}, {show : index === counter && !v && !y}]">
                           
@@ -82,7 +82,8 @@
                           <div class="accordion-content rounded-bottom">
                               <p>{{accordion.content}}</p>
                           </div>
-                      </div>
+                      </div> -->
+                      <Accordion :info="item.accordion"/>
 
                       <!-- <Accordion v-for="accordion in item.accordion" :key="accordion.id" :info="accordion"/> -->
                 </div>
@@ -348,7 +349,7 @@
 <script>
 import Jumbo from './Jumbo.vue'
 import FeatCard from './FeatCard.vue'
-// import Accordion from './Accordion.vue'
+import Accordion from './Accordion.vue'
 import Numbers from './Numbers.vue'
 import CourseCard from './CourseCard.vue'
 import EventCard from './EventCard.vue'
@@ -358,7 +359,7 @@ export default {
     components:{
       Jumbo,
       FeatCard,
-      // Accordion,
+      Accordion,
       Numbers,
       CourseCard,
       EventCard

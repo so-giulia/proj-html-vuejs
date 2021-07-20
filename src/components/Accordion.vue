@@ -1,5 +1,5 @@
 <template>
-  <div class="my-accordion rounded" :class="accordionClasses">
+  <!-- <div class="my-accordion rounded" :class="accordionClasses">
       <div class="accordion-top rounded-top d-flex align-items-center justify-content-between"
       @click="toggleAccordion">
           {{info.title}}
@@ -9,38 +9,61 @@
       <div class="accordion-content rounded-bottom">
           <p>{{info.content}}</p>
       </div>
-  </div>
+  </div> -->
+
+<div class="wrap">
+    <div class="my-accordion rounded" :class="[{open : item.active}, {closed : !item.active}]"
+    v-for="(item, index) in customAccordion" :key="index">
+
+      <div class="accordion-top rounded-top d-flex align-items-center justify-content-between"
+      @click="showContent(index)">
+          {{item.header}}
+          <i class="fas"
+          :class="(item.active) ? 'fa-minus-circle' : 'fa-plus-circle'"></i>
+      </div>
+
+      <div class="accordion-content">
+          <p>{{item.body}}</p>
+      </div>
+    </div>
+</div>
+  
 </template>
 
 <script>
 export default {
     name:'Accordion',
     props:{
-        info: Object
+        info: Array
     },
     data(){
         return{
-            open: true,
-            icon: false
+            accordionItems:[]
         }
     },
     computed:{
-        accordionClasses(){
-            return {
-                'is-closed': this.open
-            }
-        },
-        iconClasses(){
-            return{
-                'fa-minus-circle': !this.icon,
-                'fa-plus-circle': this.icon
-            }
+        customAccordion(){
+            this.accordionItems = this.info.map((item) =>{
+                return{
+                    header: item.title,
+                    body: item.content,
+                    active: false
+                }
+            });
+            
+            return this.accordionItems;
+            
         }
     },
     methods:{
-        toggleAccordion(){
-            this.open = !this.open;
-            this.icon = !this.icon;
+        showContent(index){
+            this.accordionItems[index].active = !this.accordionItems[index].active;
+
+            this.accordionItems.forEach((item, i) => {
+                if(i !== index){
+                    item.active = false;
+                }
+            });
         }
     }
 }
@@ -50,72 +73,79 @@ export default {
 @import '../styles/commons.scss';
 @import '../styles/vars.scss';
 
+
 .my-accordion{
     box-shadow: $material_light;
     margin-bottom:30px;
 
-    .accordion-top{
-        width:100%;
-        background-color: rgba($accent, 70%);
-        color:$light;
-        padding:18px 23px;
-        font-weight: 600;
-        font-size:1.1rem;
-        cursor: pointer;
-
-        transition: border-radius .2s ease;
-
-
-        i{
-            font-size:1.4rem;
-        }
+    i{
+        font-size:1.4rem;
     }
-
-    .accordion-content{
-        overflow: hidden;
-        padding:30px 50px 30px 33px;
-
-        height: 200px;
-        transition: height .3s ease;
-
-        p{
-            @include section-paragraph;
-            display: block;
-        }
-    }
-
-    
 }
 
-.is-closed{
+    .open{  
 
-    .accordion-top{
-        background: $light;
-        color: rgba($dark, 65%);
-        cursor: pointer;
+        .accordion-top{
+            width:100%;
+            padding:18px 23px;
+            font-weight: 600;
+            font-size:1.1rem;
 
-        border-radius: 0.25rem !important;
-        transition: border-radius .2s ease;
-
-        &:hover{
             background-color: rgba($accent, 70%);
             color:$light;
+        
+            cursor: pointer;
+
+            border-radius: 0.25rem 0.25rem 0 0 !important;
+            transition: border-radius .2s ease;
         }
+
+        .accordion-content{
+            overflow: hidden;
+            padding:30px 50px 30px 33px;
+            height: 200px;
+
+            transition: height .3s ease;
+
+            p{
+                @include section-paragraph;
+                display: block;
+            }
+        }
+        
     }
 
-    .accordion-content{
-        overflow: hidden;
-        padding:0;
+    .closed{
+        .accordion-top{
+            width:100%;
+            padding:18px 23px;
+            font-weight: 600;
+            font-size:1.1rem;
 
-        height: 0;
-        transition: height .3s ease;
+            background: $light;
+            color: rgba($dark, 65%);
+            cursor: pointer;
 
-        p{
-            display: none;
+            border-radius: 0.25rem !important;
+            transition: border-radius .2s ease;
+
+            &:hover{
+                background-color: rgba($accent, 70%);
+                color:$light;
+            }
+        }
+
+        .accordion-content{
+            overflow: hidden;
+            padding:0;
+
+            height: 0;
+            transition: height .3s ease;
+
+            p{
+                display: none;
+            }
         }
     }
-
-}
-
 
 </style>
