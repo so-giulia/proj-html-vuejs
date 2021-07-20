@@ -69,8 +69,22 @@
 
               <div class="col-12">
                 <div class="accordion-temp" v-for="item in data.dream" :key="item.id">
-                  <Accordion v-for="accordion in item.accordion" :key="accordion.id"
-                  :info="accordion"/>
+
+                  <div class="my-accordion rounded"
+                  :class="{accordionClasses}"
+                  v-for="(accordion, index) in item.accordion" :key="index">
+                      <div class="accordion-top rounded-top d-flex align-items-center justify-content-between"
+                      @click="toggleAccordion(index)">
+                          {{accordion.title}}
+                          <i class="fas" :class="iconClasses"></i>
+                      </div>
+
+                      <div class="accordion-content rounded-bottom">
+                          <p>{{accordion.content}}</p>
+                      </div>
+                  </div>
+                  <!-- <Accordion v-for="accordion in item.accordion" :key="accordion.id"
+                  :info="accordion"/> -->
                 </div>
               </div>
             </div>
@@ -334,7 +348,7 @@
 <script>
 import Jumbo from './Jumbo.vue'
 import FeatCard from './FeatCard.vue'
-import Accordion from './Accordion.vue'
+// import Accordion from './Accordion.vue'
 import Numbers from './Numbers.vue'
 import CourseCard from './CourseCard.vue'
 import EventCard from './EventCard.vue'
@@ -344,13 +358,43 @@ export default {
     components:{
       Jumbo,
       FeatCard,
-      Accordion,
+      // Accordion,
       Numbers,
       CourseCard,
       EventCard
     },
     props:{
       data: Object
+    },
+    data(){
+        return{
+            open: true,
+            icon: false,
+            counter: 0
+        }
+    },
+    computed:{
+        accordionClasses(){
+            return {
+                'is-closed': this.open
+            }
+        },
+        iconClasses(){
+            return{
+                'fa-minus-circle': !this.icon,
+                'fa-plus-circle': this.icon
+            }
+        }
+    },
+    methods:{
+        toggleAccordion(index){
+            this.counter = index;
+            console.log(this.counter);
+
+            this.open = !this.open;
+            this.icon = !this.icon;
+        }
+            
     }
 }
 </script>
@@ -393,6 +437,73 @@ section{
       .accent{
           @include accent;
       }
+  }
+
+  //accordion
+  .my-accordion{
+    box-shadow: $material_light;
+    margin-bottom:30px;
+
+    .accordion-top{
+        width:100%;
+        background-color: rgba($accent, 70%);
+        color:$light;
+        padding:18px 23px;
+        font-weight: 600;
+        font-size:1.1rem;
+        cursor: pointer;
+
+        transition: border-radius .2s ease;
+
+
+        i{
+            font-size:1.4rem;
+        }
+    }
+
+    .accordion-content{
+        overflow: hidden;
+        padding:30px 50px 30px 33px;
+
+        height: 200px;
+        transition: height .3s ease;
+
+        p{
+            @include section-paragraph;
+            display: block;
+        }
+    }
+    
+  }
+
+  .is-closed{
+
+      .accordion-top{
+          background: $light;
+          color: rgba($dark, 65%);
+          cursor: pointer;
+
+          border-radius: 0.25rem !important;
+          transition: border-radius .2s ease;
+
+          &:hover{
+              background-color: rgba($accent, 70%);
+              color:$light;
+          }
+      }
+
+      .accordion-content{
+          overflow: hidden;
+          padding:0;
+
+          height: 0;
+          transition: height .3s ease;
+
+          p{
+              display: none;
+          }
+      }
+
   }
 
   .numbers{

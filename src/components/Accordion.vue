@@ -1,6 +1,5 @@
 <template>
   <div class="my-accordion rounded" :class="accordionClasses">
-
       <div class="accordion-top rounded-top d-flex align-items-center justify-content-between"
       @click="toggleAccordion">
           {{info.title}}
@@ -10,7 +9,6 @@
       <div class="accordion-content rounded-bottom">
           <p>{{info.content}}</p>
       </div>
-
   </div>
 </template>
 
@@ -22,7 +20,7 @@ export default {
     },
     data(){
         return{
-            open: false,
+            open: true,
             icon: false
         }
     },
