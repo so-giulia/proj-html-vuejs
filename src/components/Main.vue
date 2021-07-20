@@ -277,7 +277,7 @@
       </div>
 
       <!-- curved shape start -->
-      <div class="row separation-shape">
+      <div class="separation-shape">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" height="315">
           <path d="M 50 0 S75 0 100 100 L100 0"></path>
         </svg>
@@ -519,6 +519,7 @@ section{
   //separation shape: before reviews
   .separation-shape{
     svg{
+      widows: 100%;
       transform: rotate(180deg) scale(-1,1);
       margin-bottom: -100px;
       margin-top: -150px;
