@@ -4,7 +4,7 @@
       <div class="accordion-top rounded-top d-flex align-items-center justify-content-between"
       @click="toggleAccordion">
           {{info.title}}
-          <i class="fas fa-plus-circle"></i>
+          <i class="fas" :class="iconClasses"></i>
       </div>
 
       <div class="accordion-content rounded-bottom">
@@ -22,7 +22,8 @@ export default {
     },
     data(){
         return{
-            open: false
+            open: false,
+            icon: false
         }
     },
     computed:{
@@ -30,11 +31,18 @@ export default {
             return {
                 'is-closed': this.open
             }
+        },
+        iconClasses(){
+            return{
+                'fa-minus-circle': !this.icon,
+                'fa-plus-circle': this.icon
+            }
         }
     },
     methods:{
         toggleAccordion(){
             this.open = !this.open;
+            this.icon = !this.icon;
         }
     }
 }

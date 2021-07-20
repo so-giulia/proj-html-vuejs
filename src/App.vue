@@ -135,15 +135,21 @@ export default {
               accordion:[
                 {
                   title: 'Multiple Platforms Supported for Teaching & Studying',
-                  content: 'MaxCoach supports the act of teaching and learning on multiple platforms like online or offline via material downloads. We know things aren’t supposed to be devoured in a short time, you can always access our knowledge base from any device.'
+                  content: 'MaxCoach supports the act of teaching and learning on multiple platforms like online or offline via material downloads. We know things aren’t supposed to be devoured in a short time, you can always access our knowledge base from any device.',
+                  classOpen:'fa-plus-circle',
+                  classClosed: 'fa-minus-circle'
                 },
                 {
                   title: 'Multiple Course Participation at the Same Time',
-                  content: 'Study for a number of courses at the same time is possible as long as you can afford the fee and time for completing them in the proper time. Learn at your own desired timeline and timetable. Maximum up to 5 course at a time for a learner at MaxCoach.'
+                  content: 'Study for a number of courses at the same time is possible as long as you can afford the fee and time for completing them in the proper time. Learn at your own desired timeline and timetable. Maximum up to 5 course at a time for a learner at MaxCoach.',
+                  classOpen:'fa-plus-circle',
+                  classClosed: 'fa-minus-circle'
                 },
                 {
                   title: 'Track Study Progress & Deliver Prompt Feedback',
-                  content: 'It’s not just a normal thing to be able to build such a solid online educational system like MaxCoach where your progress is easily tracked and feedback is properly delivered. We promise to keep improving our system for better stability and flexibility.'
+                  content: 'It’s not just a normal thing to be able to build such a solid online educational system like MaxCoach where your progress is easily tracked and feedback is properly delivered. We promise to keep improving our system for better stability and flexibility.',
+                  classOpen:'fa-plus-circle',
+                  classClosed: 'fa-minus-circle'
                 }
               ],
               img:'about-us-03-image-01.png',
