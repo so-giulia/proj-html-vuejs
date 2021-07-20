@@ -1,5 +1,7 @@
 <template>
   <header>
+    <!-- TO ADD: hover -->
+    
     <div class="container">
       <div class="row head-wrap align-items-center">
 

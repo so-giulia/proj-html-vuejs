@@ -2,7 +2,6 @@
   <div @click="scrollTop"
   class="backtotop rounded-circle text-center d-flex justify-content-center align-items-center"
   :class="{show: activeScroll}">
-      <!-- TO ADD: real arrow -->
       <i class="fas fa-arrow-up"></i>
   </div>
 </template>

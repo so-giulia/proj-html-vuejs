@@ -21,7 +21,7 @@
 
 //MILESTONES
 //1. sections (no slider) OK ----  + back to top OK (TO ADD: real behavior)
-//2. jumbo OK + accordion OK + side menu component
+//2. jumbo OK + accordion OK + side menu component OK
 //3. slider + interactions
 
 import SideNav from './components/SideNav.vue'
@@ -342,25 +342,25 @@ export default {
               testimonials:[
                 // TO ADD: images
                 {
-                  img: '',
+                  img: 'testimonial-avata-02.jpg',
                   review: 'I am free to learn at my own pace, follow my own schedule and choose the subject I like. Great study portal for people like me.',
                   name: 'Mina Hollace',
                   occupation: 'Freelancer'
                 },
                 {
-                  img: '',
+                  img: 'testimonial-avata-03.jpg',
                   review: 'MaxCoach is my best choice. Their tutors are smart and professional when dealing with students.',
                   name: 'Madley Pondor',
                   occupation: 'IT Specialist'
                 },
                 {
-                  img: '',
+                  img: 'testimonial-avata-01.jpg',
                   review: 'I am happy with their arrangement of lessons and subjects. They reflect a scientific investigation.',
                   name: 'Luvic Dubble',
                   occupation: 'Private Tutor'
                 },
                 {
-                  img: '',
+                  img: 'testimonial-avata-04.jpg',
                   review: 'I am very strict person so I require everything to be organized and neat. MaxCoach guys just got me.',
                   name: 'Florence Themes',
                   occupation: 'Multimedia Admin'

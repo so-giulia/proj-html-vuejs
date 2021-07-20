@@ -115,7 +115,6 @@
           <span class="button-large text-center rounded">
             <a href="#">
               {{item.cta}}
-              <!-- TO ADD: real arrow -->
               <i class="fas fa-long-arrow-alt-right arrow"></i>
             </a>
           </span>
@@ -300,8 +299,8 @@
         </div>
 
         <!-- reviews -->
-        <div class="row">
-          <!-- SLIDER HERE -->
+        <div class="row mb-75" v-for="review in data.reviews" :key="review.id">
+            <Slider :info="review"/>
         </div>
 
         <!-- call to action -->
@@ -337,6 +336,7 @@ import Accordion from './Accordion.vue'
 import Numbers from './Numbers.vue'
 import CourseCard from './CourseCard.vue'
 import EventCard from './EventCard.vue'
+import Slider from './Slider.vue'
 
 export default {
     name: 'Main',
@@ -346,7 +346,8 @@ export default {
       Accordion,
       Numbers,
       CourseCard,
-      EventCard
+      EventCard,
+      Slider
     },
     props:{
       data: Object
