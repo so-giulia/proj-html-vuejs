@@ -275,16 +275,24 @@
           </span>
         </div>
       </div>
+
+      <!-- curved shape start -->
+      <div class="row separation-shape">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" height="315">
+          <path d="M 50 0 S75 0 100 100 L100 0"></path>
+        </svg>
+      </div>
+      <!-- curved shape end -->
     </section>
     <!-- ———————— EVENTS END ———————— -->
-
+    
     <!-- ———————— REVIEWS START ———————— -->
     <section id="reviews">
       <div class="container">
         <!-- title -->
         <div class="row justify-content-center mb-75">
           <div class="col-12">
-           <h3 class="subheading color-brand text-center"
+           <h3 class="subheading color-brand subheading-special text-center"
            v-for="subhead in data.reviews" :key="subhead.id">
              {{subhead.h3}}
            </h3>
@@ -498,14 +506,23 @@ section{
 
   //learn2
   .img-col-2{
-    height:450px;
+    height:520px;
   }
   .learn2-txt-wrap{
     margin-right:-90px;
 
     .learn-paragraph{
       @include section-paragraph;
-      margin-bottom: 45px;
+    }
+  }
+
+  //separation shape: before reviews
+  .separation-shape{
+    svg{
+      transform: rotate(180deg) scale(-1,1);
+      margin-bottom: -100px;
+      margin-top: -150px;
+      fill: $grey_light;
     }
   }
 
@@ -613,6 +630,10 @@ section{
 #reviews{
   background-color: $grey_light;
   padding:120px 0 100px 0;
+
+  .subheading-special{
+    color: rgba($brand, 60%);
+  }
 
   .cta{
     position: relative;
