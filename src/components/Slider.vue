@@ -12,23 +12,14 @@
                 <p class="occupation">/ {{person.occupation}}</p>
             </div>
         </swiper-slide>
-        <div class="swiper-pagination" slot="pagination">
-
-        </div>
+        <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
 </template>
 
 <script>
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 
-// import style (>= Swiper 6.x)
-import '../../node_modules/swiper/swiper-bundle.min.css'
 import '../../node_modules/swiper/swiper.scss'
-// import 'swiper/swiper-bundle.min.css';
-
-
-// import style (<= Swiper 5.x)
-// import 'swiper/css/swiper.css'
 
 export default {
     name:'Slider',
@@ -51,6 +42,7 @@ export default {
             dynamicBullets: true
           },
           slidesPerView: 3,
+          slidesToScroll: 1,
           spaceBetween: 30
         }
       }
@@ -74,7 +66,7 @@ export default {
 
 
 .my-wrapper{
-    height:580px;
+    height:500px;
 
     .my-slide{
         width:30%;
