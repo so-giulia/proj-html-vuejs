@@ -519,7 +519,7 @@ section{
   //separation shape: before reviews
   .separation-shape{
     svg{
-      widows: 100%;
+      width: 100%;
       transform: rotate(180deg) scale(-1,1);
       margin-bottom: -100px;
       margin-top: -150px;
