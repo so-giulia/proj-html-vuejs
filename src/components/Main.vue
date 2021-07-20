@@ -473,6 +473,7 @@ section{
   .accordion-temp{
     width:100%;
     margin-bottom:100px;
+    height: 450px;
   }
   
   //learn1
