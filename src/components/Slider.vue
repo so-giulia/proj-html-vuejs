@@ -1,6 +1,8 @@
 <template>
     <swiper class="my-wrapper" ref="mySwiper" :options="swiperOptions">
-        <swiper-slide class="my-slide" v-for="person in info.testimonials" :key="person.id">
+
+        <swiper-slide class="my-slide"
+        v-for="person in info.testimonials" :key="person.id">
 
             <div class="review-image-wrap rounded-circle">
                 <img :src=" require('../img/' + person.img) ">
@@ -12,7 +14,8 @@
                 <p class="occupation">/ {{person.occupation}}</p>
             </div>
         </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
+
+        <div class="swiper-pagination my-pagination" slot="pagination"></div>
     </swiper>
 </template>
 
@@ -35,6 +38,7 @@ export default {
     },
     data() {
       return {
+        counter:0,
         swiperOptions: {
           pagination: {
             el: '.swiper-pagination',
@@ -42,7 +46,6 @@ export default {
             dynamicBullets: true
           },
           slidesPerView: 3,
-          slidesToScroll: 1,
           spaceBetween: 30
         }
       }
@@ -69,7 +72,6 @@ export default {
     height:500px;
 
     .my-slide{
-        width:30%;
         
         .review-image-wrap{
             overflow: hidden;
@@ -108,7 +110,5 @@ export default {
         }
     }
 }
-
-
 
 </style>

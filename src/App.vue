@@ -22,7 +22,8 @@
 //MILESTONES
 //1. sections (no slider) OK ----  + back to top OK (TO ADD: real behavior)
 //2. jumbo OK + accordion OK + side menu component OK
-//3. slider INIT + interactions
+//3. slider OK / (TO ADD: real pagination) + interactions
+//4. Header menu hover/dropdown
 
 import SideNav from './components/SideNav.vue'
 import Header from './components/Header.vue'
