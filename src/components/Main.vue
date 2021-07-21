@@ -44,7 +44,7 @@
           <div class="col-6">
             <div class="img-wrap" v-for="item in data.dream" :key="item.id">
               <img class="illo-1" :src="require('../img/' + item.img)" alt="Max Coach About Us">
-              <img class="underlay-lilla" :src="require('../img/' + item.underlay)" alt="Vector shape">
+              <img data-speed="1" class="underlay-lilla parallax-item" :src="require('../img/' + item.underlay)" alt="Vector shape">
             </div>
             
           </div>
@@ -174,10 +174,10 @@
               <img class="illo-2"
               :src="require('../img/' + item.img)" alt="Max Coach Learn">
 
-              <img class="underlay-grey"
+              <img data-speed="1" class="underlay-grey parallax-item"
               :src="require('../img/' + item.underlay)" alt="Vector shape grey">
 
-              <img class="dots-circle"
+              <img data-speed="1.5" class="dots-circle parallax-item"
               :src="require('../img/' + item.shape)" alt="circle dots shape">
             </div>
           </div>
@@ -191,15 +191,15 @@
               <img class="illo-3"
               :src="require('../img/' + item.img)" alt="Max Coach Learn">
 
-              <img class="lines"
+              <img class="lines parallax-item" data-speed="-1.2" 
               :src="require('../img/' + item.lines)" alt="Vector colored lines">
 
-              <img class="dots-square"
+              <img class="dots-square parallax-item" data-speed="1.5" 
               :src="require('../img/' + item.shape)" alt="Square dots shape">
 
-              <div class="circle rounded-circle"></div>
+              <div class="circle rounded-circle parallax-item" data-speed="1" ></div>
 
-              <img class="underlay-grey grey-2"
+              <img class="underlay-grey grey-2 parallax-item" data-speed="1.2"
               :src="require('../img/' + item.underlay)" alt="Vector shape grey">
             </div>
           </div>
@@ -312,7 +312,7 @@
         </div>
 
         <!-- call to action -->
-        <div class="cta text-center" v-for="item in data.callToAction" :key="item.id">
+        <div id="cta" class="cta text-center" v-for="item in data.callToAction" :key="item.id">
             <!-- text -->
             <h3 class="cta-subheading">
               {{item.subheading}}
@@ -326,9 +326,9 @@
             </span>
 
             <div class="img-wrap">
-              <div class="circle cta-circle rounded-circle"></div>
-              <img class="cta-lines" :src="require('../img/' + item.lines)" alt="Vector colored lines">
-              <img class="cta-circles" :src="require('../img/' + item.circles)" alt="Vector colored lines">
+              <div data-speed="1.5" class="circle cta-circle rounded-circle parallax-item"></div>
+              <img data-speed="-1" class="cta-lines parallax-item" :src="require('../img/' + item.lines)" alt="Vector colored lines">
+              <img data-speed="1" class="cta-circles parallax-item" :src="require('../img/' + item.circles)" alt="Vector colored lines">
             </div>  
         </div>
       </div>
@@ -361,6 +361,22 @@ export default {
       data: Object
     }
 }
+
+document.addEventListener("mousemove", parallax);
+
+  function parallax(e){
+      document.querySelectorAll(".parallax-item").forEach(item =>{
+      const speed = item.getAttribute('data-speed');
+      const x = (window.innerWidth - e.pageX*speed) / 100;
+      const y = (window.innerWidth - e.pageY*speed) / 100;
+
+      console.log(e.pageY);
+      console.log(e.pageX);
+
+      item.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    })
+  }
+
 </script>
 
 <style lang="scss" scoped>
