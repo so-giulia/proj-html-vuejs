@@ -78,14 +78,50 @@ header{
 
       li{
         margin:0 16px;
+        position: relative;
 
         a{
           color:$brand;
+          transition: .4s ease;
           @include a-reset;
 
-          &:hover, &:visited,
+          &:visited,
           &:focus, &:active{
             color:$brand;
+            transition: .4s ease;
+          }
+
+          &:hover{
+            color: $accent;
+            transition: .4s ease;
+          }
+
+          &::after{
+            content:'';
+            position: absolute;
+            bottom: -1.5px;
+            right: 0;
+            left: auto;
+            width: 0;
+            height: 1px;
+            background-color: $brand;
+            transition: .35s;
+            cursor: pointer;
+            transition: .4s ease;
+          }
+
+          &:hover::after{
+            content:'';
+            position: absolute;
+            bottom: -1.5px;
+            left: 0;
+            right: auto;
+            width: 100%;
+            height: 1px;
+            background-color: $accent;
+            transition: .35s;
+            cursor: pointer;
+            transition: .4s ease;
           }
 
           .dropdown-ico::before{

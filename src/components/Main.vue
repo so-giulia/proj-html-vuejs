@@ -370,9 +370,6 @@ document.addEventListener("mousemove", parallax);
       const x = (window.innerWidth - e.pageX*speed) / 100;
       const y = (window.innerWidth - e.pageY*speed) / 100;
 
-      console.log(e.pageY);
-      console.log(e.pageX);
-
       item.style.transform = `translateX(${x}px) translateY(${y}px)`;
     })
   }
