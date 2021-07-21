@@ -27,13 +27,11 @@
           <!-- course details start -->
           <div class="course-details-wrap d-flex justify-content-start align-items-center">
               <div class="detail-row d-flex align-items-center">
-                <!-- temporary TO ADD: real ico -->
                 <i class="far fa-file-alt details-ico"></i>
                 <span>{{info.lessons}} Lessons</span>
               </div>
 
               <div class="detail-row d-flex mx-3 align-items-center">
-                <!-- temporary TO ADD: real ico -->
                 <i class="fas fa-user-alt details-ico"></i>
                 <span>{{info.students}} Students</span>
               </div>

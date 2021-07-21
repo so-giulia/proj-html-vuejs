@@ -1,6 +1,5 @@
 <template>
   <div class="sidenav">
-      <!-- TO ADD: hover -->
       <nav v-for="nav in data" :key="nav.id">
           <ul class="d-flex flex-column align-items-center justify-content-center">
               <li v-for="li in nav" :key="li.id" class="text-center">

@@ -1,10 +1,7 @@
 <template>
-  <header>
-    <!-- TO ADD: hover -->
-    
+  <header>    
     <div class="container">
       <div class="row head-wrap align-items-center">
-
         <!-- logo -->
         <div class="col-3">
           <a href="#">
@@ -42,7 +39,6 @@
             </form>
           </div>
         </div>
-
       </div>
     </div>
   </header>
@@ -55,6 +51,7 @@ export default {
       data: Array
     }
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -68,6 +65,7 @@ header{
   .head-wrap{
     height:80px;
     color:$brand;
+    position: relative;
 
     #logo{
       width:160px;
@@ -131,6 +129,7 @@ header{
             margin-left:13px;
           }
         }
+
       }
     }
 
@@ -208,6 +207,6 @@ header{
         }
       }
     }
-  }
+  }  
 }
 </style>

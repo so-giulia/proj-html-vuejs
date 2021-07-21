@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <SideNav :data="sideNav"/>
 
     <Header :data="header"/>
@@ -16,15 +15,6 @@
 </template>
 
 <script>
-// —————————————————— PROJECT —————————————————— //
-//search for 'TO ADD:' at the end in every component
-
-//MILESTONES
-//1. sections (no slider) OK ----  + back to top OK (TO ADD: real behavior)
-//2. jumbo OK + accordion OK + side menu component OK
-//3. slider OK / (TO ADD: real pagination) + interactions
-//4. Header menu hover/dropdown
-
 import SideNav from './components/SideNav.vue'
 import Header from './components/Header.vue'
 import Main from './components/Main.vue'
