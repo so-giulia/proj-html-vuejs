@@ -34,7 +34,7 @@ export default {
     position:fixed;
     top:200px;
     right:0;
-    box-shadow: $material;
+    box-shadow: $material_nav;
     border-radius: 0.25rem 0 0 0.25rem;
     z-index: 1000;
 
