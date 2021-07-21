@@ -44,7 +44,7 @@
           <div class="col-6">
             <div class="img-wrap" v-for="item in data.dream" :key="item.id">
               <img class="illo-1" :src="require('../img/' + item.img)" alt="Max Coach About Us">
-              <img data-speed="1" class="underlay-lilla parallax-item" :src="require('../img/' + item.underlay)" alt="Vector shape">
+              <img data-speed="2" class="underlay-lilla parallax-item" :src="require('../img/' + item.underlay)" alt="Vector shape">
             </div>
             
           </div>
@@ -174,10 +174,10 @@
               <img class="illo-2"
               :src="require('../img/' + item.img)" alt="Max Coach Learn">
 
-              <img data-speed="1" class="underlay-grey parallax-item"
+              <img data-speed="2" class="underlay-grey parallax-item"
               :src="require('../img/' + item.underlay)" alt="Vector shape grey">
 
-              <img data-speed="1.5" class="dots-circle parallax-item"
+              <img data-speed="1" class="dots-circle parallax-item"
               :src="require('../img/' + item.shape)" alt="circle dots shape">
             </div>
           </div>
@@ -191,15 +191,15 @@
               <img class="illo-3"
               :src="require('../img/' + item.img)" alt="Max Coach Learn">
 
-              <img class="lines parallax-item" data-speed="-1.2" 
+              <img class="lines parallax-item" data-speed="-2" 
               :src="require('../img/' + item.lines)" alt="Vector colored lines">
 
               <img class="dots-square parallax-item" data-speed="1.5" 
               :src="require('../img/' + item.shape)" alt="Square dots shape">
 
-              <div class="circle rounded-circle parallax-item" data-speed="1" ></div>
+              <div class="circle rounded-circle parallax-item" data-speed="2" ></div>
 
-              <img class="underlay-grey grey-2 parallax-item" data-speed="1.2"
+              <img class="underlay-grey grey-2 parallax-item" data-speed="1"
               :src="require('../img/' + item.underlay)" alt="Vector shape grey">
             </div>
           </div>
