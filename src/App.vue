@@ -41,6 +41,65 @@ export default {
               {txt: 'Features'},
               {txt: 'Blog'},
               {txt: 'Shop'}
+            ],
+            home:[
+              {link: 'MaxCoach Education', status: 'hot'},
+              {link: 'Course Portal', status: ''},
+              {link: 'Distant Learning', status: 'hot'},
+              {link: 'Multimedia Pedagogy', status: ''},
+              {link: 'Modern Schooling', status: ''},
+              {link: 'Remote Training', status: ''},
+              {link: 'Health Coaching', status: ''},
+              {link: 'Gym Coaching', status: ''},
+              {link: 'Business', status: ''},
+              {link: 'Artist', status: ''},
+              {link: 'Kitchen Coach', status: ''},
+              {link: 'Motivation', status: ''},
+              {link: 'Dancing', status: ''},
+              {link: 'Guitar', status: 'new'},
+              {link: 'Yoga', status: 'new'},
+              {link: 'Photography', status: 'new'},
+              {link: 'Personal Finance', status: 'new'}
+            ],
+            pages:[
+                {link: 'Start Here'},
+                {link: 'Success Story'},
+                {link: 'About me'},
+                {link: 'About us 01'},
+                {link: 'About us 02'},
+                {link: 'About us 03'},
+                {link: 'Contact me'},
+                {link: 'Contact us'},
+                {link: 'Purchase Guide'},
+                {link: 'Privacy Policy'},
+                {link: 'Terms of Service'},
+            ],
+            courses:[
+                {link: 'Courses Grid 01'},
+                {link: 'Courses Grid 02'},
+                {link: 'Courses Grid 03'},
+                {link: 'Membership levels'},
+                {link: 'Become a Teacher'},
+                {link: 'Profile'},
+                {link: 'Checkout'},
+                {link: 'Single layout'}
+            ],
+            features:[
+                {link: 'Events'},
+                {link: 'Zoom Meetings'}
+            ],
+            blog:[
+                {link: 'Blog Grid'},
+                {link: 'Blog Masonry'},
+                {link: 'Blog Classic'},
+                {link: 'Blog List'}
+            ],
+            shop:[
+                {link: 'Shop Left Sidebar'},
+                {link: 'Shop Right Sidebar'},
+                {link: 'Cart'},
+                {link: 'Wishlist'},
+                {link: 'Single Product'}
             ]
           }
         ],
