@@ -15,8 +15,8 @@
           <nav>
             <ul class="d-flex align-items-center"
             v-for="ul in data" :key="ul.id">
-              <li v-for="(li, index) in ul.headNav" :key="index" @mouseover="showMenu(index)">
-                <a href="#" class="d-flex align-items-center">
+              <li v-for="(li, index) in ul.headNav" :key="index" @mouseover="showMenu(index), hoverActive(index)">
+                <a href="#" class="d-flex align-items-center" :class="hoverClass(index)">
                   {{li.txt}} <i class="fas fa-chevron-down dropdown-ico"></i>
                 </a>
               </li>
@@ -189,7 +189,8 @@ export default {
         courses: false,
         features: false,
         blog: false,
-        shop: false
+        shop: false,
+        hoverState: -1
       }
     },
     methods:{
@@ -273,36 +274,60 @@ export default {
         this.features = false;
         this.blog = false;
         this.shop = false;
+        this.hoverState = -1;
       },
       pagesHideOthers(){
         this.courses = false;
         this.features = false;
         this.blog = false;
         this.shop = false;
+        this.hoverState = 1;
       },
       coursesHideOthers(){
         this.pages = false;
         this.features = false;
         this.blog = false;
         this.shop = false;
+        this.hoverState = 2;
       },
       featuresHideOthers(){
         this.pages = false;
         this.courses = false;
         this.blog = false;
         this.shop = false;
+        this.hoverState = 3;
       },
       blogHideOthers(){
         this.pages = false;
         this.features = false;
         this.courses = false;
         this.shop = false;
+        this.hoverState = 4;
       },
       shopHideOthers(){
         this.pages = false;
         this.features = false;
         this.courses = false;
         this.blog = false;
+        this.hoverState = 5;
+      },
+      hoverActive(i){
+        if(i == 0 && this.megamenu){
+          this.hoverState = 0;
+        }else if(i == 1 && this.pages){
+          this.hoverState = 1;
+        }else if(i == 2 && this.courses){
+          this.hoverState = 2;
+        }else if(i == 3 && this.features){
+          this.hoverState = 3;
+        }else if(i == 4 && this.blog){
+          this.hoverState = 4;
+        }else if(i == 5 && this.shop){
+          this.hoverState = 5;
+        }
+      },
+      hoverClass(i){
+        return this.hoverState == i ? 'hover' : ''
       }
     }
 }
@@ -568,7 +593,7 @@ header{
             transition: .4s ease;
 
             &:hover{
-              color:$accent;
+              color:$brand;
               transition: .4s ease;
             }
           }
@@ -597,15 +622,15 @@ header{
     }
   }
 
-  
-
   .hide-menu{
+    visibility: hidden;
     transform: translateY(20px);
     opacity:0;
     transition: .4s ease;
     transition-delay: .25s;
   }
   .show-menu{
+    visibility: visible;
     transform: translateY(0);
     opacity:1;
     transition: .4s ease;
@@ -620,6 +645,25 @@ header{
     width: 100vw;
     height: 100vh;
     background-color: transparent;
+  }
+
+  .hover{
+    color:$accent !important;
+    transition: .4s ease  !important;
+
+    &::after{
+      content:'' !important;
+      position: absolute !important;
+      bottom: -1.5px !important;
+      left: 0 !important;
+      right: auto !important;
+      width: 100% !important;
+      height: 1px !important;
+      background-color: $accent !important;
+      transition: .35s !important;
+      cursor: pointer !important;
+      transition: .4s ease !important;
+    }
   }
 
 }
